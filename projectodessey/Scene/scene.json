@@ -1,0 +1,10 @@
+{
+  "Scene": [
+    {
+      "modelsPath":   "Scene\\Models\\models.json",
+      "triggersPath": "Scene\\triggers.json",
+      "pLightsPath":  "Scene\\plight.json",
+      "camerasPath":  "Scene\\cameras.json"
+    }
+  ]
+}

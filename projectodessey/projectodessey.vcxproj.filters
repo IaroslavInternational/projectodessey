@@ -1,0 +1,999 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Dxerr">
+      <UniqueIdentifier>{2b144e38-4e36-4755-9c6f-ce7bdafe689d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{8b3c7dd6-6d7e-4e5f-9157-530b072ae3ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Шейдеры">
+      <UniqueIdentifier>{246c933d-909b-4e52-ace4-7be4ab3da27b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Сцена">
+      <UniqueIdentifier>{276dec2f-6bed-4dd9-96e1-5542364f47ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Другое">
+      <UniqueIdentifier>{e72c8dd2-c363-4679-a1aa-059b4ca35655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\Сцена">
+      <UniqueIdentifier>{4135393b-7132-4def-9db3-120b3f6bd9bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui\dirent">
+      <UniqueIdentifier>{3c3206d7-baec-4481-a3ee-d95b302039c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui\dialog">
+      <UniqueIdentifier>{c54226af-a7d6-4921-b22c-330372dc4f54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Интерфейс">
+      <UniqueIdentifier>{6d4a5697-2ed4-4051-967b-e0b63b583918}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Интерфейс\Модули интерфейса">
+      <UniqueIdentifier>{284868dd-ddfd-446d-8605-2234b0e8922f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Интерфейс">
+      <UniqueIdentifier>{e60eefba-bb9e-4706-921e-176019ecbe7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Интерфейс\Модули интерфейса">
+      <UniqueIdentifier>{c10ec609-b558-49fe-abfb-a718aa866c94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Сцена\Объекты">
+      <UniqueIdentifier>{1703e919-5fbf-41c3-affe-e67b9498cc14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Сцена\Объекты\Модель">
+      <UniqueIdentifier>{a0d8c3fa-c77f-488a-85ce-4a517188e6f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Сцена\Объекты\Триггер">
+      <UniqueIdentifier>{49b2dd38-ff00-4312-88bb-f7993458fa61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Сцена\Объекты\Камера">
+      <UniqueIdentifier>{36a59b20-b191-4795-8fcc-95b5c39a47dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Сцена\Объекты">
+      <UniqueIdentifier>{456baabb-333b-4626-8948-b254effc5252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Сцена\Объекты\Триггер">
+      <UniqueIdentifier>{5e501cf2-2400-4e86-84c4-1ba7a8aa712f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Сцена\Объекты\Модель">
+      <UniqueIdentifier>{562fafbf-5d77-4aff-980b-56008d9d1542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Сцена\Объекты\Камера">
+      <UniqueIdentifier>{3d9f99f9-abaa-44ec-8b2c-b11af0dd1623}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Сцена\Объекты\Освещение">
+      <UniqueIdentifier>{4159dc97-1060-4d0c-b084-07ef2bd50487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Сцена\Объекты\Освещение">
+      <UniqueIdentifier>{1488bf79-651c-41ea-aa5f-2d07853d7d3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Шейдеры\Заголовочные файлы">
+      <UniqueIdentifier>{de9872ec-5ab7-495b-81e9-7da662a1234a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Окна">
+      <UniqueIdentifier>{25ad75f6-f43d-4d65-b1d6-797260728c3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система">
+      <UniqueIdentifier>{29e3f38a-9c2e-4c96-974e-5dab09a0ebda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Bindable">
+      <UniqueIdentifier>{8212b4ff-b281-4a2b-a58f-939dd096e69a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Drawable">
+      <UniqueIdentifier>{e73e32bd-8d79-4c49-beae-9a4a4dcf591f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Jobber">
+      <UniqueIdentifier>{d0d76725-2bdc-466a-b834-7e45dadbd42d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Jobber\Passlib">
+      <UniqueIdentifier>{a47a8a0b-9489-4bf3-af92-abea5c78a5ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Jobber\Passlib\Base">
+      <UniqueIdentifier>{4e11c64f-ba48-46ac-823c-6ef765552a6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Jobber\Graphlib">
+      <UniqueIdentifier>{4880e55d-78d9-46cb-afc1-674be37824d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Исключения">
+      <UniqueIdentifier>{29cd9656-8677-4f16-b70a-685a60b20c35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Графика">
+      <UniqueIdentifier>{fd45e8bf-0044-43d4-92ed-33c9a6a3668b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Утилиты">
+      <UniqueIdentifier>{cad93636-c014-49b5-9609-0240539f4b39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Переферия">
+      <UniqueIdentifier>{5dd8453a-2323-434b-94ae-a819b4714047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Переферия\Мышь">
+      <UniqueIdentifier>{dd1a5192-950a-4940-9833-5bd902fe600b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Переферия\Клавиатура">
+      <UniqueIdentifier>{3308c7a7-e91c-4946-ab2c-93792b6fc286}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Графика\Геометрия">
+      <UniqueIdentifier>{59371286-4d7e-4419-ad85-f20c1b8261ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Система\Макросы">
+      <UniqueIdentifier>{c62c91bc-50e8-4796-8319-6caf607ee4f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Система">
+      <UniqueIdentifier>{dc3d86a8-5db2-409d-91b9-36e91b95ec9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Система\Jobber">
+      <UniqueIdentifier>{eddc9441-0f5e-4e14-8e11-4192d31942cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Система\Jobber\Passlib">
+      <UniqueIdentifier>{d1a93451-c7ba-4488-b98e-5c3f359b1338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Система\Bindable">
+      <UniqueIdentifier>{ca931623-77ca-4413-a547-16916dac2740}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Система\Drawable">
+      <UniqueIdentifier>{43a2ba1f-f562-4758-9a91-b3da2e14ed89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Окна">
+      <UniqueIdentifier>{6345868b-bde3-499b-be56-bbde78ad45ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Система\Исключения">
+      <UniqueIdentifier>{2fc71fb7-c196-4775-9e29-4626a870e3b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Система\Переферия">
+      <UniqueIdentifier>{eb34b39e-cd53-4b23-836e-6a782b43cfba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Система\Переферия\Мышь">
+      <UniqueIdentifier>{27119d46-cf3e-4912-88d8-b82eef8b989d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Система\Переферия\Клавиатура">
+      <UniqueIdentifier>{0b705938-5b78-44d6-850e-264db46c7279}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Система\Графика">
+      <UniqueIdentifier>{96f94ef6-5f60-41ea-b422-78de3780a3fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Система\Утилиты">
+      <UniqueIdentifier>{7c14a29b-52c0-4c98-ad9b-91f86213fbd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Шейдеры\Попискельные шейдеры">
+      <UniqueIdentifier>{0f0812da-9684-420a-958c-719063f0f2a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Шейдеры\Повершинные шейдеры">
+      <UniqueIdentifier>{985d40fe-a202-4cd2-b96c-1a6ad14cb78e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Сцена\Объекты\База объектов">
+      <UniqueIdentifier>{3b95941d-e3d0-4f2e-babb-6f8531263886}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Сцена\Объекты\База объектов">
+      <UniqueIdentifier>{419528ed-173b-4fdf-82fd-365fabebdf11}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="dxerr.cpp">
+      <Filter>Dxerr</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexShader.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformCbuf.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Topology.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelShader.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="InputLayout.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexBuffer.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Drawable.cpp">
+      <Filter>Исходные файлы\Система\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidSphere.cpp">
+      <Filter>Исходные файлы\Система\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="TestCube.cpp">
+      <Filter>Исходные файлы\Система\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="Blender.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Rasterizer.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="NullPixelShader.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Step.cpp">
+      <Filter>Исходные файлы\Система\Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="Technique.cpp">
+      <Filter>Исходные файлы\Система\Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="Job.cpp">
+      <Filter>Исходные файлы\Система\Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Модель</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Модель</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Модель</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Модель</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelException.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Модель</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderQueuePass.cpp">
+      <Filter>Исходные файлы\Система\Jobber\Passlib</Filter>
+    </ClCompile>
+    <ClCompile Include="FullscreenPass.cpp">
+      <Filter>Исходные файлы\Система\Jobber\Passlib</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderGraphCompileException.cpp">
+      <Filter>Исходные файлы\Система\Jobber\Passlib</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderGraph.cpp">
+      <Filter>Исходные файлы\Система\Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="StepLinkingProbe.cpp">
+      <Filter>Исходные файлы\Система\Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTarget.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthStencil.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="BindingPass.cpp">
+      <Filter>Исходные файлы\Система\Jobber\Passlib</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformCbufScaling.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Pass.cpp">
+      <Filter>Исходные файлы\Система\Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="BufferClearPass.cpp">
+      <Filter>Исходные файлы\Система\Jobber\Passlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Sink.cpp">
+      <Filter>Исходные файлы\Система\Jobber\Passlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Исходные файлы\Система\Jobber\Passlib</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeTexture.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyboxTransformCbuf.cpp">
+      <Filter>Исходные файлы\Система\Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Исходные файлы\Сцена</Filter>
+    </ClCompile>
+    <ClCompile Include="Plate.cpp">
+      <Filter>Исходные файлы\Система\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_dx11.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_win32.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\ImGuiFileDialog.cpp">
+      <Filter>imgui\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Trigger.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Триггер</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Камера</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraContainer.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Камера</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraIndicator.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Камера</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObjects.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imnodes.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelContainer.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Модель</Filter>
+    </ClCompile>
+    <ClCompile Include="PointLight.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Освещение</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineTimer.cpp">
+      <Filter>Исходные файлы\Система\Утилиты</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineUtil.cpp">
+      <Filter>Исходные файлы\Система\Утилиты</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineXM.cpp">
+      <Filter>Исходные файлы\Система\Утилиты</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsResource.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Исходные файлы\Система\Переферия\Клавиатура</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Исходные файлы\Система\Переферия\Мышь</Filter>
+    </ClCompile>
+    <ClCompile Include="Projection.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="Frustum.cpp">
+      <Filter>Исходные файлы\Система\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="Surface.cpp">
+      <Filter>Исходные файлы\Система\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineException.cpp">
+      <Filter>Исходные файлы\Система\Исключения</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Исходные файлы\Окна</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>Исходные файлы\Окна</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDataReader.cpp">
+      <Filter>Исходные файлы\Сцена</Filter>
+    </ClCompile>
+    <ClCompile Include="AdapterData.cpp">
+      <Filter>Исходные файлы\Интерфейс</Filter>
+    </ClCompile>
+    <ClCompile Include="BlurOutlineRenderGraph.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="ImguiManager.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="HorizontalBlurPass.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturePreprocessor.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="ShadowRasterizer.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="ShadowSampler.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="ShadowCameraCBuf.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="VerticalBlurPass.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="ScaleOutlineRenderGraph.cpp">
+      <Filter>Исходные файлы\Система\Графика</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicConstant.cpp">
+      <Filter>Исходные файлы\Система</Filter>
+    </ClCompile>
+    <ClCompile Include="DxgiInfoManager.cpp">
+      <Filter>Исходные файлы\Система</Filter>
+    </ClCompile>
+    <ClCompile Include="Testing.cpp">
+      <Filter>Исходные файлы\Система</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommander.cpp">
+      <Filter>Исходные файлы\Система</Filter>
+    </ClCompile>
+    <ClCompile Include="LayoutCodex.cpp">
+      <Filter>Исходные файлы\Система</Filter>
+    </ClCompile>
+    <ClCompile Include="cnpy.cpp">
+      <Filter>Исходные файлы\Система</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsMessageMap.cpp">
+      <Filter>Исходные файлы\Окна</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\База объектов</Filter>
+    </ClCompile>
+    <ClCompile Include="VisibleObject.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\База объектов</Filter>
+    </ClCompile>
+    <ClCompile Include="TriggerContainer.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Триггер</Filter>
+    </ClCompile>
+    <ClCompile Include="GUISystem.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="dxerr.h">
+      <Filter>Dxerr</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsThrowMacros.h">
+      <Filter>Заголовочные файлы\Система\Макросы</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindable.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelShader.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexShader.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="InputLayout.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Topology.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBuffer.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantBuffers.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformCbuf.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawable.h">
+      <Filter>Заголовочные файлы\Система\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsThrowMacros.h">
+      <Filter>Заголовочные файлы\Система\Макросы</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexedTriangleList.h">
+      <Filter>Заголовочные файлы\Система\Графика\Геометрия</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>Заголовочные файлы\Система\Графика\Геометрия</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Sampler.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidSphere.h">
+      <Filter>Заголовочные файлы\Система\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="BindableCommon.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="ConditionalNoexcept.h">
+      <Filter>Заголовочные файлы\Система\Макросы</Filter>
+    </ClInclude>
+    <ClInclude Include="BindableCodex.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Заголовочные файлы\Система\Графика\Геометрия</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Заголовочные файлы\Система\Графика\Геометрия</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCube.h">
+      <Filter>Заголовочные файлы\Система\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="Blender.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Rasterizer.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantBuffersEx.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Stencil.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Job.h">
+      <Filter>Заголовочные файлы\Система\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Step.h">
+      <Filter>Заголовочные файлы\Система\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Technique.h">
+      <Filter>Заголовочные файлы\Система\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="NullPixelShader.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="TechniqueProbe.h">
+      <Filter>Заголовочные файлы\Система\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Модель</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Модель</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Модель</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Модель</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelException.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Модель</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelProbe.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Модель</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderGraphCompileException.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderGraph.h">
+      <Filter>Заголовочные файлы\Система\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="StepLinkingProbe.h">
+      <Filter>Заголовочные файлы\Система\Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthStencil.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTarget.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferResource.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="LambertianPass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferClearPass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib</Filter>
+    </ClInclude>
+    <ClInclude Include="OutlineMaskGenerationPass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib</Filter>
+    </ClInclude>
+    <ClInclude Include="OutlineDrawingPass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformCbufScaling.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="ScaleOutlineRenderGraph.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Graphlib</Filter>
+    </ClInclude>
+    <ClInclude Include="BlurOutlineRenderGraph.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Graphlib</Filter>
+    </ClInclude>
+    <ClInclude Include="HorizontalBlurPass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib</Filter>
+    </ClInclude>
+    <ClInclude Include="BlurOutlineDrawingPass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib</Filter>
+    </ClInclude>
+    <ClInclude Include="VerticalBlurPass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib</Filter>
+    </ClInclude>
+    <ClInclude Include="BindingPass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="FullscreenPass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Pass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderQueuePass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Sink.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Source.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraIndicator.h">
+      <Filter>Заголовочные файлы\Система\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.h">
+      <Filter>Заголовочные файлы\Система\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="WireframePass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Channels.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Graphlib</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowMappingPass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowCameraCBuf.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowSampler.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowRasterizer.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyboxPass.h">
+      <Filter>Заголовочные файлы\Система\Jobber\Passlib</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeTexture.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyboxTransformCbuf.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Viewport.h">
+      <Filter>Заголовочные файлы\Система\Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Заголовочные файлы\Сцена</Filter>
+    </ClInclude>
+    <ClInclude Include="Plate.h">
+      <Filter>Заголовочные файлы\Система\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="AppLog.h">
+      <Filter>Заголовочные файлы\Интерфейс\Модули интерфейса</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_dx11.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_win32.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\dirent\dirent.h">
+      <Filter>imgui\dirent</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\ImGuiFileDialogConfig.h">
+      <Filter>imgui\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\ImGuiFileDialog.h">
+      <Filter>imgui\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="LogCommands.h">
+      <Filter>Заголовочные файлы\Интерфейс\Модули интерфейса</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineConverter.h">
+      <Filter>Заголовочные файлы\Система\Макросы</Filter>
+    </ClInclude>
+    <ClInclude Include="Trigger.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Триггер</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerStruct.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Триггер</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Камера</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraContainer.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Камера</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjects.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imnodes.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelContainer.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Модель</Filter>
+    </ClInclude>
+    <ClInclude Include="PointLight.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Освещение</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Заголовочные файлы\Система\Переферия\Клавиатура</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Заголовочные файлы\Система\Переферия\Мышь</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics.h">
+      <Filter>Заголовочные файлы\Система\Графика</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsResource.h">
+      <Filter>Заголовочные файлы\Система\Графика</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Заголовочные файлы\Система\Графика</Filter>
+    </ClInclude>
+    <ClInclude Include="Surface.h">
+      <Filter>Заголовочные файлы\Система\Графика\Геометрия</Filter>
+    </ClInclude>
+    <ClInclude Include="ImguiManager.h">
+      <Filter>Заголовочные файлы\Система\Графика</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineException.h">
+      <Filter>Заголовочные файлы\Система\Исключения</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineMath.h">
+      <Filter>Заголовочные файлы\Система\Утилиты</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineTimer.h">
+      <Filter>Заголовочные файлы\Система\Утилиты</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineUtil.h">
+      <Filter>Заголовочные файлы\Система\Утилиты</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineXM.h">
+      <Filter>Заголовочные файлы\Система\Утилиты</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDataReader.h">
+      <Filter>Заголовочные файлы\Сцена</Filter>
+    </ClInclude>
+    <ClInclude Include="TestModelProbe.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Модель</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Заголовочные файлы\Система\Графика</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineWRL.h">
+      <Filter>Заголовочные файлы\Система\Утилиты</Filter>
+    </ClInclude>
+    <ClInclude Include="TexturePreprocessor.h">
+      <Filter>Заголовочные файлы\Система\Графика</Filter>
+    </ClInclude>
+    <ClInclude Include="Projection.h">
+      <Filter>Заголовочные файлы\Система\Графика\Геометрия</Filter>
+    </ClInclude>
+    <ClInclude Include="AdapterData.h">
+      <Filter>Заголовочные файлы\Интерфейс</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Заголовочные файлы\Окна</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsMessageMap.h">
+      <Filter>Заголовочные файлы\Окна</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineWin.h">
+      <Filter>Заголовочные файлы\Система</Filter>
+    </ClInclude>
+    <ClInclude Include="LayoutCodex.h">
+      <Filter>Заголовочные файлы\Система</Filter>
+    </ClInclude>
+    <ClInclude Include="cnpy.h">
+      <Filter>Заголовочные файлы\Система</Filter>
+    </ClInclude>
+    <ClInclude Include="DxgiInfoManager.h">
+      <Filter>Заголовочные файлы\Система</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicConstant.h">
+      <Filter>Заголовочные файлы\Система</Filter>
+    </ClInclude>
+    <ClInclude Include="PerfLog.h">
+      <Filter>Заголовочные файлы\Система</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Заголовочные файлы\Система</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommander.h">
+      <Filter>Заголовочные файлы\Система</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Заголовочные файлы\Система</Filter>
+    </ClInclude>
+    <ClInclude Include="Testing.h">
+      <Filter>Заголовочные файлы\Система</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\База объектов</Filter>
+    </ClInclude>
+    <ClInclude Include="VisibleObject.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\База объектов</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerContainer.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Триггер</Filter>
+    </ClInclude>
+    <ClInclude Include="GUISystem.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineFunctions.hpp">
+      <Filter>Заголовочные файлы\Система\Утилиты</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="projectodessey.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ARGS_32.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DXGetErrorDescription.inl">
+      <Filter>Dxerr</Filter>
+    </None>
+    <None Include="DXGetErrorString.inl">
+      <Filter>Dxerr</Filter>
+    </None>
+    <None Include="DXTrace.inl">
+      <Filter>Dxerr</Filter>
+    </None>
+    <None Include="process.json">
+      <Filter>Другое</Filter>
+    </None>
+    <None Include="VShadow.hlsli">
+      <Filter>Шейдеры\Заголовочные файлы</Filter>
+    </None>
+    <None Include="LightVectorData.hlsli">
+      <Filter>Шейдеры\Заголовочные файлы</Filter>
+    </None>
+    <None Include="PointLight.hlsli">
+      <Filter>Шейдеры\Заголовочные файлы</Filter>
+    </None>
+    <None Include="ShaderOps.hlsli">
+      <Filter>Шейдеры\Заголовочные файлы</Filter>
+    </None>
+    <None Include="Transform.hlsli">
+      <Filter>Шейдеры\Заголовочные файлы</Filter>
+    </None>
+    <None Include="_PShadow_Dynamic.hlsli">
+      <Filter>Шейдеры\Заголовочные файлы</Filter>
+    </None>
+    <None Include="_PShadow_Static.hlsli">
+      <Filter>Шейдеры\Заголовочные файлы</Filter>
+    </None>
+    <None Include="PShadow.hlsli">
+      <Filter>Шейдеры\Заголовочные файлы</Filter>
+    </None>
+    <None Include="UML-objects-hierarchy.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Blur_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="BlurOutline_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="Phong_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDif_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDifMskSpc_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDifMskSpcNrm_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDifNrm_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDifSpcNrm_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDifSpc_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="Skybox_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="Solid_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="Shadow_PS.hlsl">
+      <Filter>Шейдеры\Попискельные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="Fullscreen_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="Offset_VS_deprecated.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="Phong_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDif_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDifMskSpc_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDifMskSpcNrm_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDifNrm_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDifSpc_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongDifSpcNrm_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="Shadow_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="ShadowTest_PS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="ShadowTest_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="Skybox_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+    <FxCompile Include="Solid_VS.hlsl">
+      <Filter>Шейдеры\Повершинные шейдеры</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
