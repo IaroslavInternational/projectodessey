@@ -1,0 +1,132 @@
+newmtl Plastic_-_Matte_(Black)
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png
+newmtl Steel_-_Rough
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png
+newmtl Opaque(76,76,76)
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png
+newmtl Opaque(18,18,18)
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png
+newmtl Steel_-_Satin
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png
+newmtl Plastic_-_Matte_(Black)_1
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png
+newmtl ABS_(White)
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png
+newmtl Steel_-_Rough_1
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png
+newmtl Plastic_-_Matte_(Blue)
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png
+newmtl Aluminum_-_Satin
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png
+newmtl Plastic_-_Glossy_(Black)
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png
+newmtl Glass_(Clear)
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd Karkas_Plastic_-_Matte_(Black)_color.png
+map_Ks Karkas_Plastic_-_Matte_(Black)_rough.png
+map_bump Karkas_Plastic_-_Matte_(Black)_nmap.png

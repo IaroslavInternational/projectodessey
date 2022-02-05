@@ -18,5 +18,7 @@ public:
 private:
 	std::unique_ptr<Model> model;
 	std::shared_ptr<Camera> camera;
+private:
+	bool IsManualControl = false;
 };
 
