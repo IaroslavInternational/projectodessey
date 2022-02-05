@@ -4,6 +4,7 @@
 #include "BlurOutlineRenderGraph.h"
 #include "EngineTimer.h"
 #include "SceneObjects.h"
+#include "Robot.h"
 
 class Scene
 {
@@ -23,4 +24,5 @@ private:
 	std::shared_ptr<Window>		 wnd;				// Указатель на главное окно 
 	Rgph::BlurOutlineRenderGraph rg{ wnd->Gfx() };	// Рендер граф
 	SceneObjects				 objects;
+	Robot robot;
 };

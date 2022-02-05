@@ -120,6 +120,7 @@
     <ClCompile Include="imgui\imnodes.cpp" />
     <ClCompile Include="ModelContainer.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Robot.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneDataReader.cpp" />
     <ClCompile Include="SceneObjects.cpp" />
@@ -350,6 +351,7 @@
     <ClInclude Include="LogCommands.h" />
     <ClInclude Include="ModelContainer.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Robot.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneDataReader.h" />
     <ClInclude Include="SceneObjects.h" />

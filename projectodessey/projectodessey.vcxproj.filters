@@ -462,6 +462,9 @@
     <ClCompile Include="GUISystem.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Robot.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -865,6 +868,9 @@
     </ClInclude>
     <ClInclude Include="EngineFunctions.hpp">
       <Filter>Заголовочные файлы\Система\Утилиты</Filter>
+    </ClInclude>
+    <ClInclude Include="Robot.h">
+      <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

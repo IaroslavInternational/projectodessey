@@ -9,8 +9,13 @@
 Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 	:
 	wnd(wnd),
-	objects(data, wnd->Gfx(), rg)
+	objects(data, wnd->Gfx(), rg),
+	robot("SevROV", "Scene\\Models\\Karkas_v35.obj", wnd->Gfx(),
+		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }),
+		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }), 0.05f)
 {	
+	objects.cameras.AddCamera(robot.GetCamera());
+	robot.AttachGfx(rg);
 	objects.LinkTechniques(rg);
 }
 
@@ -89,6 +94,9 @@ void Scene::Render(float dt)
 
 	objects.Submit(Chan::main);
 	objects.models.Submit(Chan::shadow);
+
+	robot.Render(Chan::main);
+	robot.Render(Chan::shadow);
 
 	rg.Execute(wnd->Gfx());
 
