@@ -65,6 +65,8 @@ public:
 	// ѕерегруженный метод дл€ установки позиции камеры, вклю€ча€ еЄ индиктор и проекцию
 	void			  SetPosition(DirectX::XMFLOAT3 position) noexcept;
 
+	void SetTravelSpeed(float tSpeed);
+
 	// ќтрисовать базовый интерфейс управлени€
 	void SpawnDefaultControl(Graphics& gfx) noexcept;
 private:

@@ -137,3 +137,8 @@ void Camera::SetPosition(DirectX::XMFLOAT3 position) noexcept
 	indicator.SetPos(position);
 	proj.SetPos(position);
 }
+
+void Camera::SetTravelSpeed(float tSpeed)
+{
+	travelSpeed = tSpeed;
+}

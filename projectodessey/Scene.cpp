@@ -10,7 +10,7 @@ Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 	:
 	wnd(wnd),
 	objects(data, wnd->Gfx(), rg),
-	robot("SevROV", "Scene\\Models\\Karkas.obj", wnd->Gfx(),
+	robot("SevROV", "Scene\\Models\\Karkas.obj", wnd->Gfx(), wnd,
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }),
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }), 0.03f)
 {	
@@ -50,7 +50,7 @@ void Scene::ProcessInput(float dt)
 		}
 	}
 
-	if (!wnd->CursorEnabled())
+	if (!wnd->CursorEnabled() && false)
 	{
 		if (wnd->kbd.KeyIsPressed('W'))
 		{
@@ -85,6 +85,8 @@ void Scene::ProcessInput(float dt)
 			objects.cameras->Rotate((float)delta->x, (float)delta->y);
 		}
 	}
+
+	robot.HandleInput(dt);
 }
 
 void Scene::Render(float dt)

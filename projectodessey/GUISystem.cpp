@@ -614,18 +614,18 @@ void GUISystem::ShowCamerasControl()
 					cameras->GetControlledCamera().Reset(cameras->gfx); // !!!
 				}
 
-				if (rotDirty)
+				/*if (rotDirty && false)
 				{
 					const DirectX::XMFLOAT3 angles = { cameras->GetControlledCamera().orientation.x, cameras->GetControlledCamera().orientation.y, 0.0f };
 					cameras->GetControlledCamera().indicator.SetRotation(angles);
 					cameras->GetControlledCamera().proj.SetRotation(angles);
 				}
 
-				if (posDirty)
+				if (posDirty && false)
 				{
 					cameras->GetControlledCamera().indicator.SetPos(cameras->GetControlledCamera().position);
 					cameras->GetControlledCamera().proj.SetPos(cameras->GetControlledCamera().position);
-				}
+				}*/
 
 				if (IsSave)
 				{				

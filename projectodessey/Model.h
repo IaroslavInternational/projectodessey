@@ -43,6 +43,7 @@ public:
 	void Submit(size_t channels);					      // Метод для присоединения модели к каналу отрисовки
 	void Accept(class ModelProbe& probe);			      // Создать экземпляр расширенного интерфейса для модели
 	void SetRootTransform(DirectX::XMMATRIX tf) noexcept; // Установить положение в пространстве с помощью матрицы	
+	void Translate(DirectX::XMFLOAT3 delta);
 private:
 	std::unique_ptr<Node> ParseNode(int& nextId, const aiNode& node, float scale) noexcept; // Парсинг записей (составных частей) модели
 private:

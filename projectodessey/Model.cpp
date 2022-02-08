@@ -84,6 +84,25 @@ void Model::SetRootTransform(DirectX::XMMATRIX tf) noexcept
 	pRoot->SetAppliedTransform(tf);
 }
 
+void Model::Translate(DirectX::XMFLOAT3 delta)
+{
+	position.x += delta.x;
+	position.y += delta.y;
+	position.z += delta.z;
+
+	SetRootTransform
+	(
+		DirectX::XMMatrixRotationX(orientation.x) *
+		DirectX::XMMatrixRotationY(orientation.y) *
+		DirectX::XMMatrixRotationZ(orientation.z) *
+		DirectX::XMMatrixTranslation(
+			position.x,
+			position.y,
+			position.z
+		)
+	);
+}
+
 std::unique_ptr<Node> Model::ParseNode(int& nextId, const aiNode& node, float scale) noexcept
 {
 	const auto transform = ScaleTranslation(dx::XMMatrixTranspose(dx::XMLoadFloat4x4(
