@@ -44,6 +44,7 @@ public:
 	void Accept(class ModelProbe& probe);			      // —оздать экземпл€р расширенного интерфейса дл€ модели
 	void SetRootTransform(DirectX::XMMATRIX tf) noexcept; // ”становить положение в пространстве с помощью матрицы	
 	void Translate(DirectX::XMFLOAT3 delta);
+	void Rotate(DirectX::XMFLOAT3 delta);
 private:
 	std::unique_ptr<Node> ParseNode(int& nextId, const aiNode& node, float scale) noexcept; // ѕарсинг записей (составных частей) модели
 private:

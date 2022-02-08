@@ -35,6 +35,11 @@ void Robot::HandleInput(float dt)
 	{
 		model->Translate({ -dt,0.0f,0.0f });
 		camera->Translate({ -dt,0.0f,0.0f });
+		
+		if (model->GetOrientation().z <= 45.0f * 0.017f)
+		{
+			model->Rotate({0.0f, 0.0f, dt});
+		}
 	}
 	if (wnd->kbd.KeyIsPressed('S'))
 	{
@@ -45,6 +50,11 @@ void Robot::HandleInput(float dt)
 	{
 		model->Translate({ dt,0.0f,0.0f });
 		camera->Translate({ dt,0.0f,0.0f });
+
+		if (model->GetOrientation().z >= -45.0f * 0.017f)
+		{
+			model->Rotate({ 0.0f, 0.0f, -dt });
+		}
 	}
 	if (wnd->kbd.KeyIsPressed('R'))
 	{
@@ -61,4 +71,14 @@ void Robot::HandleInput(float dt)
 void Robot::Render(size_t channel)
 {
 	model->Submit(channel);
+}
+
+DirectX::XMFLOAT3 Robot::GetPosition()
+{
+	return model->GetPosition();
+}
+
+DirectX::XMFLOAT3 Robot::GetOrientation()
+{
+	return model->GetOrientation();
 }

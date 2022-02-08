@@ -12,7 +12,8 @@ GUISystem::GUISystem(Scene* scene)
 	pLight(&scene->objects.pLight),
 	models(&scene->objects.models),
 	cameras(&scene->objects.cameras),
-	triggers(&scene->objects.triggers)
+	triggers(&scene->objects.triggers),
+	rb(&scene->robot)
 {
 	SetGuiColors();
 
@@ -38,6 +39,8 @@ void GUISystem::Show()
 		ShowLeftBottomPanel();
 		ShowBottomPanel();
 		ShowOptionalPanel();
+
+		ShowRobotControl();
 	}
 }
 
@@ -720,6 +723,55 @@ void GUISystem::ShowPLightControl()
 		{
 			pLight->Reset();
 		}
+	}
+
+	ImGui::End();
+}
+
+void GUISystem::ShowRobotControl()
+{
+	ImGuiIO& io = ImGui::GetIO();
+	ImVec2 DispSize = io.DisplaySize;
+
+	ImVec2 PanelSize = ImVec2(
+		round(DispSize.x * 0.25f),
+		DispSize.y * 0.5f
+	);
+
+	ImGui::SetNextWindowSize(PanelSize);
+	if (ImGui::Begin("ТНПА", &ShowRobotSettings, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse))
+	{
+		bool rotDirty = false;
+		bool posDirty = false;
+		bool scaleDirty = false;
+		bool animDirty = false;
+
+		const auto dcheck = [](bool d, bool& carry) { carry = carry || d; };
+		
+		ImGui::Text("Позиция");
+		dcheck(ImGui::SliderFloat("X", &rb->model->position.x, -80.0f, 80.0f, "%.4f"), posDirty);
+		dcheck(ImGui::SliderFloat("Y", &rb->model->position.y, -80.0f, 80.0f, "%.4f"), posDirty);
+		dcheck(ImGui::SliderFloat("Z", &rb->model->position.z, -80.0f, 80.0f, "%.4f"), posDirty);
+
+		ImGui::Text("Ориентация");
+		dcheck(ImGui::SliderAngle("Крен", &rb->model->orientation.x, 0.995f * -90.0f, 0.995f * 90.0f), rotDirty);
+		dcheck(ImGui::SliderAngle("Тангаш", &rb->model->orientation.y, 0.995f * -90.0f, 0.995f * 90.0f), rotDirty);
+		dcheck(ImGui::SliderAngle("Расканье", &rb->model->orientation.z, -180.0f, 180.0f), rotDirty);
+
+		ImGui::Checkbox("Скрыть", &rb->model->visibility);
+
+		rb->model->SetRootTransform
+		(
+			DirectX::XMMatrixRotationX(rb->model->orientation.x) *
+			DirectX::XMMatrixRotationY(rb->model->orientation.y) *
+			DirectX::XMMatrixRotationZ(rb->model->orientation.z) *
+			DirectX::XMMatrixTranslation(
+				rb->model->position.x,
+				rb->model->position.y,
+				rb->model->position.z
+			)
+		);
+
 	}
 
 	ImGui::End();

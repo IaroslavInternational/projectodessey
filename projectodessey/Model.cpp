@@ -92,14 +92,25 @@ void Model::Translate(DirectX::XMFLOAT3 delta)
 
 	SetRootTransform
 	(
-		DirectX::XMMatrixRotationX(orientation.x) *
-		DirectX::XMMatrixRotationY(orientation.y) *
-		DirectX::XMMatrixRotationZ(orientation.z) *
 		DirectX::XMMatrixTranslation(
 			position.x,
 			position.y,
 			position.z
 		)
+	);
+}
+
+void Model::Rotate(DirectX::XMFLOAT3 delta)
+{
+	orientation.x += delta.x;
+	orientation.y += delta.y;
+	orientation.z += delta.z;
+
+	SetRootTransform
+	(
+		DirectX::XMMatrixRotationX(orientation.x) *
+		DirectX::XMMatrixRotationY(orientation.y) *
+		DirectX::XMMatrixRotationZ(orientation.z)
 	);
 }
 

@@ -33,12 +33,14 @@ private:
 	void ShowCamerasControl();	//
 								
 	void ShowPLightControl();	//
+
+	void ShowRobotControl();
 private:
 	bool ShowModelsSettings   = true;   //
 	bool ShowTriggersSettings = false;  // Правая панель триггеров на сцене
 	bool ShowCamerasSettings  = false;  // Левая панель камер на сцене с настройками
 	bool ShowPLightSettings   = false;  // Правая панель управления настройками точечных источников света
-
+	bool ShowRobotSettings	  = true;	//
 	bool ShowHardwareInfo     = true;  // FPS и информация о графическом адаптере
 	bool ShowLogs		      = true;  // Лог
 private:
@@ -47,6 +49,7 @@ private:
 	ModelContainer*   models;
 	CameraContainer*  cameras;
 	TriggerContainer* triggers;
+	Robot*			  rb;
 private:
 	bool						   IsShow   = true;
 	bool						   IsSave   = false;
