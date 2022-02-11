@@ -24,53 +24,84 @@ std::shared_ptr<Camera> Robot::GetCamera()
 
 void Robot::HandleInput(float dt)
 {
+	if (!IsManualControl)
+	{
+		return;
+	}
+
+	DirectX::XMFLOAT3 translation = { 0.0f, 0.0f, 0.0f };
+	DirectX::XMFLOAT3 rotation = { 0.0f, 0.0f, 0.0f };
+
 	dt *= speed;
 
 	if (wnd->kbd.KeyIsPressed('W'))
 	{
-		model->Translate({ 0.0f,0.0f,dt });
-		camera->Translate({ 0.0f,0.0f,dt });
+		translation = { 0.0f,0.0f,dt };
 	}
-	if (wnd->kbd.KeyIsPressed('A'))
+	else if (wnd->kbd.KeyIsPressed('A'))
 	{
-		model->Translate({ -dt,0.0f,0.0f });
-		camera->Translate({ -dt,0.0f,0.0f });
+		translation = { -dt,0.0f,0.0f };
 		
-		if (model->GetOrientation().z <= 45.0f * 0.017f)
-		{
-			model->Rotate({0.0f, 0.0f, dt});
-		}
 	}
-	if (wnd->kbd.KeyIsPressed('S'))
+	else if (wnd->kbd.KeyIsPressed('S'))
 	{
-		model->Translate({ 0.0f,0.0f,-dt });
-		camera->Translate({ 0.0f,0.0f,-dt });
+		translation = { 0.0f,0.0f,-dt };		
 	}
-	if (wnd->kbd.KeyIsPressed('D'))
+	else if (wnd->kbd.KeyIsPressed('D'))
 	{
-		model->Translate({ dt,0.0f,0.0f });
-		camera->Translate({ dt,0.0f,0.0f });
+		translation = { dt,0.0f,0.0f };
+	}
+	else if (wnd->kbd.KeyIsPressed('R'))
+	{
+		translation = { 0.0f,dt,0.0f };
+	}
+	else if (wnd->kbd.KeyIsPressed('F'))
+	{
+		translation = { 0.0f,-dt,0.0f };
+	}
 
-		if (model->GetOrientation().z >= -45.0f * 0.017f)
-		{
-			model->Rotate({ 0.0f, 0.0f, -dt });
-		}
-	}
-	if (wnd->kbd.KeyIsPressed('R'))
+	UpdateModel(translation, rotation);
+}
+
+void Robot::UpdateModel(DirectX::XMFLOAT3 translation, DirectX::XMFLOAT3 rotation)
+{
+	if (translation.x != 0.0f &&
+		translation.y != 0.0f &&
+		translation.z != 0.0f)
 	{
-		model->Translate({ 0.0f,dt,0.0f });
-		camera->Translate({ 0.0f,dt,0.0f });
+
 	}
-	if (wnd->kbd.KeyIsPressed('F'))
+	else 
 	{
-		model->Translate({ 0.0f,-dt,0.0f });
-		camera->Translate({ 0.0f,-dt,0.0f });
+		Translate(translation);
+	}
+	
+	if (rotation.x != 0.0f &&
+		rotation.y != 0.0f &&
+		rotation.z != 0.0f)
+	{
+
+	}
+	else
+	{
+		Rotate(rotation);
 	}
 }
 
 void Robot::Render(size_t channel)
 {
 	model->Submit(channel);
+}
+
+void Robot::Translate(DirectX::XMFLOAT3 translation)
+{
+	model->Translate(translation);
+	camera->Translate(translation);
+}
+
+void Robot::Rotate(DirectX::XMFLOAT3 rotation)
+{
+	model->Rotate(rotation);
 }
 
 DirectX::XMFLOAT3 Robot::GetPosition()

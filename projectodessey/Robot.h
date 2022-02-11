@@ -20,14 +20,18 @@ public:
 public:
 	void HandleInput(float dt);
 	void Render(size_t channel);
+	void Translate(DirectX::XMFLOAT3 translation);
+	void Rotate(DirectX::XMFLOAT3 rotation);
 	DirectX::XMFLOAT3 GetPosition();
 	DirectX::XMFLOAT3 GetOrientation();
+private:
+	void UpdateModel(DirectX::XMFLOAT3 translation, DirectX::XMFLOAT3 rotation);
 private:
 	std::unique_ptr<Model> model;
 	std::shared_ptr<Camera> camera;
 	std::shared_ptr<Window> wnd;
 private:
-	bool IsManualControl = false;
+	bool IsManualControl = true;
 	float speed = 10.0f;
 };
 
