@@ -32,6 +32,7 @@ private:
 	std::shared_ptr<Window> wnd;
 private:
 	bool IsManualControl = true;
-	float speed = 10.0f;
+	float linear_speed = 10.0f;
+	float angle_speed = 1.0f;
 };
 

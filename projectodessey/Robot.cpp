@@ -32,8 +32,8 @@ void Robot::HandleInput(float dt)
 	DirectX::XMFLOAT3 translation = { 0.0f, 0.0f, 0.0f };
 	DirectX::XMFLOAT3 rotation = { 0.0f, 0.0f, 0.0f };
 
-	dt *= speed;
-
+	dt *= linear_speed;
+	
 	if (wnd->kbd.KeyIsPressed('W'))
 	{
 		translation = { 0.0f,0.0f,dt };
@@ -41,7 +41,7 @@ void Robot::HandleInput(float dt)
 	else if (wnd->kbd.KeyIsPressed('A'))
 	{
 		translation = { -dt,0.0f,0.0f };
-		
+		rotation = { 0.0f,0.0f, dt / 10.0f };
 	}
 	else if (wnd->kbd.KeyIsPressed('S'))
 	{
@@ -50,6 +50,7 @@ void Robot::HandleInput(float dt)
 	else if (wnd->kbd.KeyIsPressed('D'))
 	{
 		translation = { dt,0.0f,0.0f };
+		rotation = { 0.0f,0.0f, -dt / 10.0f };
 	}
 	else if (wnd->kbd.KeyIsPressed('R'))
 	{
@@ -101,6 +102,48 @@ void Robot::Translate(DirectX::XMFLOAT3 translation)
 
 void Robot::Rotate(DirectX::XMFLOAT3 rotation)
 {
+	if (!(GetOrientation().x >= -0.79f && GetOrientation().x <= 0.79f))
+	{
+		if (GetOrientation().x < 0.0f)
+		{
+			model->SetOrientation({ -0.79f, GetOrientation().y, GetOrientation().z });
+		}
+		else
+		{
+			model->SetOrientation({ 0.79f, GetOrientation().y, GetOrientation().z });
+		}
+
+		rotation.x = 0.0f;
+	}
+
+	if (!(GetOrientation().y >= -0.79f && GetOrientation().y <= 0.79f))
+	{
+		if (GetOrientation().y < 0.0f)
+		{
+			model->SetOrientation({ GetOrientation().x, -0.79f, GetOrientation().z });
+		}
+		else
+		{
+			model->SetOrientation({ GetOrientation().x, 0.79f, GetOrientation().z });
+		}
+
+		rotation.y = 0.0f;
+	}
+
+	if (!(GetOrientation().z > -0.79f && GetOrientation().z < 0.79f))
+	{
+		if (GetOrientation().z < 0.0f)
+		{
+			model->SetOrientation({ GetOrientation().x, GetOrientation().y, -0.79f });
+		}
+		else
+		{
+			model->SetOrientation({ GetOrientation().x, GetOrientation().y, 0.79f });
+		}
+
+		rotation.z = 0.0f;
+	}
+
 	model->Rotate(rotation);
 }
 
