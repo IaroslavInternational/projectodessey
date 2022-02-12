@@ -617,18 +617,18 @@ void GUISystem::ShowCamerasControl()
 					cameras->GetControlledCamera().Reset(cameras->gfx); // !!!
 				}
 
-				/*if (rotDirty && false)
+				if (rotDirty)
 				{
 					const DirectX::XMFLOAT3 angles = { cameras->GetControlledCamera().orientation.x, cameras->GetControlledCamera().orientation.y, 0.0f };
 					cameras->GetControlledCamera().indicator.SetRotation(angles);
 					cameras->GetControlledCamera().proj.SetRotation(angles);
 				}
 
-				if (posDirty && false)
+				if (posDirty)
 				{
 					cameras->GetControlledCamera().indicator.SetPos(cameras->GetControlledCamera().position);
 					cameras->GetControlledCamera().proj.SetPos(cameras->GetControlledCamera().position);
-				}*/
+				}
 
 				if (IsSave)
 				{				
@@ -744,7 +744,6 @@ void GUISystem::ShowRobotControl()
 		bool rotDirty = false;
 		bool posDirty = false;
 		bool scaleDirty = false;
-		bool animDirty = false;
 
 		const auto dcheck = [](bool d, bool& carry) { carry = carry || d; };
 		
@@ -771,7 +770,6 @@ void GUISystem::ShowRobotControl()
 				rb->model->position.z
 			)
 		);
-
 	}
 
 	ImGui::End();

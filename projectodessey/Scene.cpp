@@ -35,11 +35,15 @@ void Scene::ProcessInput(float dt)
 			{
 				wnd->DisableCursor();
 				wnd->mouse.EnableRaw();
+
+				robot.SetManualControl(false);
 			}
 			else
 			{
 				wnd->EnableCursor();
 				wnd->mouse.DisableRaw();
+
+				robot.SetManualControl(true);
 			}
 			break;
 		case VK_RETURN:
@@ -50,7 +54,7 @@ void Scene::ProcessInput(float dt)
 		}
 	}
 
-	if (!wnd->CursorEnabled() && false)
+	if (!wnd->CursorEnabled())
 	{
 		if (wnd->kbd.KeyIsPressed('W'))
 		{

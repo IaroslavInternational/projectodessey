@@ -22,6 +22,7 @@ public:
 	void Render(size_t channel);
 	void Translate(DirectX::XMFLOAT3 translation);
 	void Rotate(DirectX::XMFLOAT3 rotation);
+	void SetManualControl(bool state);
 	DirectX::XMFLOAT3 GetPosition();
 	DirectX::XMFLOAT3 GetOrientation();
 private:

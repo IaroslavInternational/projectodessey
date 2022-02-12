@@ -36,29 +36,31 @@ void Robot::HandleInput(float dt)
 	
 	if (wnd->kbd.KeyIsPressed('W'))
 	{
-		translation = { 0.0f,0.0f,dt };
-	}
-	else if (wnd->kbd.KeyIsPressed('A'))
-	{
-		translation = { -dt,0.0f,0.0f };
-		rotation = { 0.0f,0.0f, dt / 10.0f };
+		translation.z += dt;
 	}
 	else if (wnd->kbd.KeyIsPressed('S'))
 	{
-		translation = { 0.0f,0.0f,-dt };		
+		translation.z += -dt;
+	}
+
+	if (wnd->kbd.KeyIsPressed('A'))
+	{
+		translation.x += -dt;
+		rotation.z += dt / 10.0f;
 	}
 	else if (wnd->kbd.KeyIsPressed('D'))
 	{
-		translation = { dt,0.0f,0.0f };
-		rotation = { 0.0f,0.0f, -dt / 10.0f };
+		translation.x += dt;
+		rotation.z += -dt / 10.0f;
 	}
-	else if (wnd->kbd.KeyIsPressed('R'))
+
+	if (wnd->kbd.KeyIsPressed('R'))
 	{
-		translation = { 0.0f,dt,0.0f };
+		translation.y += dt;
 	}
 	else if (wnd->kbd.KeyIsPressed('F'))
 	{
-		translation = { 0.0f,-dt,0.0f };
+		translation.y += -dt;
 	}
 
 	UpdateModel(translation, rotation);
@@ -145,6 +147,11 @@ void Robot::Rotate(DirectX::XMFLOAT3 rotation)
 	}
 
 	model->Rotate(rotation);
+}
+
+void Robot::SetManualControl(bool state)
+{
+	IsManualControl = state;
 }
 
 DirectX::XMFLOAT3 Robot::GetPosition()
