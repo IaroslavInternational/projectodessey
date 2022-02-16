@@ -61,13 +61,13 @@ Window::Window(const char* name)
 #define ENGINE_WINDOW 0
 
 #if ENGINE_WINDOW == 0
-		// Создание окна
+	// Создание окна
 	hWnd = CreateWindowEx(
-		WS_EX_TOPMOST, WindowClass::GetName(), name, WS_POPUP | WS_MAXIMIZE,
+		WS_EX_APPWINDOW, WindowClass::GetName(), name, WS_POPUP | WS_MAXIMIZE,
 		CW_USEDEFAULT, CW_USEDEFAULT, width, height,
 		HWND_DESKTOP, NULL, WindowClass::GetInstance(), this
 	);
-#else	
+#elif ENGINE_WINDOW == 1
 	// Создание окна
 	hWnd = CreateWindow(
 		WindowClass::GetName(), name, WS_CAPTION | WS_MAXIMIZE,

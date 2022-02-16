@@ -35,6 +35,9 @@ private:
 	void ShowPLightControl();	//
 
 	void ShowRobotControl();
+
+	void LoadModel(std::string name, std::string path);
+	void OpenDialog();
 private:
 	bool ShowModelsSettings   = true;   //
 	bool ShowTriggersSettings = false;  // Правая панель триггеров на сцене
