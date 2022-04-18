@@ -15,16 +15,16 @@ public:
 		  DirectX::XMFLOAT3 orientation = { 0.0f, 0.0f, 0.0f },
 		  float				scale = 1.0f);
 public:
-	void AttachGfx(Rgph::RenderGraph& rg);
+	void					AttachGfx(Rgph::RenderGraph& rg);
+	void					Render(size_t channel);
 	std::shared_ptr<Camera> GetCamera();
 public:
-	void Render(size_t channel);
-	void Translate(DirectX::XMFLOAT3 translation);
-	void Rotate(DirectX::XMFLOAT3 rotation);
+	void			  Translate(DirectX::XMFLOAT3 translation);
+	void			  Rotate(DirectX::XMFLOAT3 rotation);
+	void			  SetPosition(DirectX::XMFLOAT3 position);
+	void			  SetOrientation(DirectX::XMFLOAT3 orientation);
 	DirectX::XMFLOAT3 GetPosition();
 	DirectX::XMFLOAT3 GetOrientation();
-private:
-	void UpdateModel(DirectX::XMFLOAT3 translation, DirectX::XMFLOAT3 rotation);
 private:
 	std::unique_ptr<Model>  model;
 	std::shared_ptr<Camera> camera;

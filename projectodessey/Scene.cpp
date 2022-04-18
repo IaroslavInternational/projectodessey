@@ -7,13 +7,13 @@
 #include <sstream>
 
 Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
-	: 
+	:
 	wnd(wnd),
 	objects(data, wnd->Gfx(), rg),
-	dp("Data\\position.txt", "Data\\orientation.txt", "Data\\time.txt"),
 	robot("SevROV", "Scene\\Models\\Robot\\robot.obj", wnd->Gfx(), wnd,
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }),
-		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }), 0.01f)
+		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }), 0.01f),
+	sim("Data\\position.txt", "Data\\orientation.txt", "Data\\time.txt", robot)
 {	
 	objects.cameras.AddCamera(robot.GetCamera());
 	robot.AttachGfx(rg);
@@ -42,6 +42,12 @@ void Scene::ProcessInput(float dt)
 				wnd->EnableCursor();
 				wnd->mouse.DisableRaw();
 			}
+			break;
+		case 0x45:
+			sim.Start();
+			break;
+		case 0x46:
+			sim.Stop();
 			break;
 		case VK_RETURN:
 			savingDepth = true;
@@ -86,6 +92,8 @@ void Scene::ProcessInput(float dt)
 			objects.cameras->Rotate((float)delta->x, (float)delta->y);
 		}
 	}
+
+	sim.Simulate(dt);
 }
 
 void Scene::Render(float dt)
@@ -93,8 +101,8 @@ void Scene::Render(float dt)
 	objects.pLight.Bind(wnd->Gfx(), objects.cameras->GetMatrix());
 	rg.BindMainCamera(objects.cameras.GetActiveCamera());
 
-	objects.Submit(Chan::main);
-	objects.models.Submit(Chan::shadow);
+	//objects.Submit(Chan::main);
+	//objects.models.Submit(Chan::shadow);
 
 	robot.Render(Chan::main);
 	robot.Render(Chan::shadow);

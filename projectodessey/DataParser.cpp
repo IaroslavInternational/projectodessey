@@ -44,9 +44,31 @@ DataParser::DataParser(const std::string& file_pos, const std::string& file_orie
         times.push_back(std::stof(line));
     }
 
+    sim_iterations = times.size();
+
     positions.shrink_to_fit();
     orientations.shrink_to_fit();
     times.shrink_to_fit();
+}
+
+DirectX::XMFLOAT3 DataParser::GetPosition(size_t index) const noexcept
+{
+    return positions[index];
+}
+
+DirectX::XMFLOAT3 DataParser::GetOrientation(size_t index) const noexcept
+{
+    return orientations[index];
+}
+
+float DataParser::GetTime(size_t index) const noexcept
+{
+    return times[index];
+}
+
+size_t DataParser::GetIterations() const noexcept
+{
+    return sim_iterations;
 }
 
 std::vector<std::string> DataParser::GetLines(const std::string& filename) const
