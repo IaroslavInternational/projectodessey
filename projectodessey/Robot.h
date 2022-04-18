@@ -18,22 +18,16 @@ public:
 	void AttachGfx(Rgph::RenderGraph& rg);
 	std::shared_ptr<Camera> GetCamera();
 public:
-	void HandleInput(float dt);
 	void Render(size_t channel);
 	void Translate(DirectX::XMFLOAT3 translation);
 	void Rotate(DirectX::XMFLOAT3 rotation);
-	void SetManualControl(bool state);
 	DirectX::XMFLOAT3 GetPosition();
 	DirectX::XMFLOAT3 GetOrientation();
 private:
 	void UpdateModel(DirectX::XMFLOAT3 translation, DirectX::XMFLOAT3 rotation);
 private:
-	std::unique_ptr<Model> model;
+	std::unique_ptr<Model>  model;
 	std::shared_ptr<Camera> camera;
 	std::shared_ptr<Window> wnd;
-private:
-	bool IsManualControl = true;
-	float linear_speed = 10.0f;
-	float angle_speed = 1.0f;
 };
 

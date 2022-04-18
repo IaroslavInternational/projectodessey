@@ -7,10 +7,10 @@
 #include <sstream>
 
 Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
-	:
+	: 
 	wnd(wnd),
 	objects(data, wnd->Gfx(), rg),
-	robot("SevROV", "Scene\\Models\\KarkasForDauny.obj", wnd->Gfx(), wnd,
+	robot("SevROV", "Scene\\Models\\Robot\\robot.obj", wnd->Gfx(), wnd,
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }),
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }), 0.01f)
 {	
@@ -35,15 +35,11 @@ void Scene::ProcessInput(float dt)
 			{
 				wnd->DisableCursor();
 				wnd->mouse.EnableRaw();
-
-				robot.SetManualControl(false);
 			}
 			else
 			{
 				wnd->EnableCursor();
 				wnd->mouse.DisableRaw();
-
-				robot.SetManualControl(true);
 			}
 			break;
 		case VK_RETURN:
@@ -89,8 +85,6 @@ void Scene::ProcessInput(float dt)
 			objects.cameras->Rotate((float)delta->x, (float)delta->y);
 		}
 	}
-
-	robot.HandleInput(dt);
 }
 
 void Scene::Render(float dt)

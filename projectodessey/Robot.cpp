@@ -22,50 +22,6 @@ std::shared_ptr<Camera> Robot::GetCamera()
 	return camera;
 }
 
-void Robot::HandleInput(float dt)
-{
-	if (!IsManualControl)
-	{
-		return;
-	}
-
-	DirectX::XMFLOAT3 translation = { 0.0f, 0.0f, 0.0f };
-	DirectX::XMFLOAT3 rotation = { 0.0f, 0.0f, 0.0f };
-
-	dt *= linear_speed;
-	
-	if (wnd->kbd.KeyIsPressed('W'))
-	{
-		translation.z += dt;
-	}
-	else if (wnd->kbd.KeyIsPressed('S'))
-	{
-		translation.z += -dt;
-	}
-
-	if (wnd->kbd.KeyIsPressed('A'))
-	{
-		translation.x += -dt;
-		rotation.z += dt / 10.0f;
-	}
-	else if (wnd->kbd.KeyIsPressed('D'))
-	{
-		translation.x += dt;
-		rotation.z += -dt / 10.0f;
-	}
-
-	if (wnd->kbd.KeyIsPressed('R'))
-	{
-		translation.y += dt;
-	}
-	else if (wnd->kbd.KeyIsPressed('F'))
-	{
-		translation.y += -dt;
-	}
-
-	UpdateModel(translation, rotation);
-}
-
 void Robot::UpdateModel(DirectX::XMFLOAT3 translation, DirectX::XMFLOAT3 rotation)
 {
 	if (translation.x != 0.0f &&
@@ -147,11 +103,6 @@ void Robot::Rotate(DirectX::XMFLOAT3 rotation)
 	}
 
 	model->Rotate(rotation);
-}
-
-void Robot::SetManualControl(bool state)
-{
-	IsManualControl = state;
 }
 
 DirectX::XMFLOAT3 Robot::GetPosition()
