@@ -178,6 +178,12 @@
     <Filter Include="Исходные файлы\Сцена\Объекты\База объектов">
       <UniqueIdentifier>{419528ed-173b-4fdf-82fd-365fabebdf11}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Сцена\Объекты\Робот">
+      <UniqueIdentifier>{bbbd023f-119c-4cfb-a904-3b35626c9c87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Сцена\Объекты\Робот">
+      <UniqueIdentifier>{bf4777bd-23b2-4c83-ab34-78c0899d8b64}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp">
@@ -463,6 +469,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Robot.cpp">
+      <Filter>Исходные файлы\Сцена\Объекты\Робот</Filter>
+    </ClCompile>
+    <ClCompile Include="DataParser.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -870,6 +879,9 @@
       <Filter>Заголовочные файлы\Система\Утилиты</Filter>
     </ClInclude>
     <ClInclude Include="Robot.h">
+      <Filter>Заголовочные файлы\Сцена\Объекты\Робот</Filter>
+    </ClInclude>
+    <ClInclude Include="DataParser.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

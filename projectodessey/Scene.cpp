@@ -10,6 +10,7 @@ Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 	: 
 	wnd(wnd),
 	objects(data, wnd->Gfx(), rg),
+	dp("Data\\position.txt", "Data\\orientation.txt", "Data\\time.txt"),
 	robot("SevROV", "Scene\\Models\\Robot\\robot.obj", wnd->Gfx(), wnd,
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }),
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }), 0.01f)

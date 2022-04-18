@@ -108,6 +108,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="cnpy.cpp" />
     <ClCompile Include="CubeTexture.cpp" />
+    <ClCompile Include="DataParser.cpp" />
     <ClCompile Include="GUISystem.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\ImGuiFileDialog.cpp" />
@@ -333,6 +334,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="cnpy.h" />
     <ClInclude Include="CubeTexture.h" />
+    <ClInclude Include="DataParser.h" />
     <ClInclude Include="EngineConverter.h" />
     <ClInclude Include="EngineFunctions.hpp" />
     <ClInclude Include="GUISystem.h" />
