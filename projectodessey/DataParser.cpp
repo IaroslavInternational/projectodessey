@@ -38,9 +38,8 @@ DataParser::DataParser(const std::string& file_pos, const std::string& file_orie
         orientations.push_back({ std::stof(vals[0]), std::stof(vals[1]), std::stof(vals[2]) });
     }
 
-    for (auto& line : data_o)
+    for (auto& line : data_t)
     {
-        line = line.erase(line.find(","));
         times.push_back(std::stof(line));
     }
 

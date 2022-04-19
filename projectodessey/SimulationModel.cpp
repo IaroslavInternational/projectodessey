@@ -34,10 +34,13 @@ void SimulationModel::Simulate(float dt)
 		return;
 	}
 
-	if (data.GetTime(iteration) >= time_counter)
+	time_counter += dt * speed;
+	while (time_counter >= data.GetTime(iteration))
 	{
+
 		if (!(iteration < data.GetIterations()))
 		{
+			OnSim = false;
 			return;
 		}
 
@@ -45,9 +48,5 @@ void SimulationModel::Simulate(float dt)
 		robot.SetOrientation(data.GetOrientation(iteration));
 
 		iteration++;
-	}
-	else
-	{
-		time_counter += dt * speed;
 	}
 }

@@ -13,7 +13,8 @@ GUISystem::GUISystem(Scene* scene)
 	models(&scene->objects.models),
 	cameras(&scene->objects.cameras),
 	triggers(&scene->objects.triggers),
-	rb(&scene->robot)
+	rb(&scene->robot),
+	sim(&scene->sim)
 {
 	SetGuiColors();
 
@@ -758,6 +759,13 @@ void GUISystem::ShowRobotControl()
 		dcheck(ImGui::SliderAngle("Расканье", &rb->model->orientation.z, -180.0f, 180.0f), rotDirty);
 
 		ImGui::Checkbox("Скрыть", &rb->model->visibility);
+
+		std::ostringstream oss;
+		oss << "Время симуляции: " << sim->time_counter << " сек.\n"
+			<< "Итерация: " << sim->iteration << "\n"
+			<< "Всего итераций: " << sim->data.GetIterations();
+
+		ImGui::Text(oss.str().c_str());
 
 		rb->model->SetRootTransform
 		(

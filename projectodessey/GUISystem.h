@@ -53,6 +53,7 @@ private:
 	CameraContainer*  cameras;
 	TriggerContainer* triggers;
 	Robot*			  rb;
+	SimulationModel*  sim;
 private:
 	bool						   IsShow   = true;
 	bool						   IsSave   = false;

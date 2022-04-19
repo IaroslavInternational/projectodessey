@@ -6,6 +6,8 @@
 class SimulationModel
 {
 public:
+	friend class GUISystem;
+public:
 	SimulationModel(const std::string& file_pos, const std::string& file_orient, const std::string& file_t, Robot& r);
 public:
 	void Start() noexcept;
