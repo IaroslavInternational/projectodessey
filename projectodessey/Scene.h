@@ -27,4 +27,5 @@ private:
 	SceneObjects				 objects;
 	Robot robot;
 	SimulationModel sim;
+	std::vector<std::unique_ptr<Plate>> grid;
 };

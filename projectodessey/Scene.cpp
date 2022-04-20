@@ -6,6 +6,11 @@
 
 #include <sstream>
 
+#define GRID_WIDTH  20.0f
+#define GRID_HEIGHT 20.0f
+#define CELL_WIDTH  20.0f
+#define CELL_HEIGHT 20.0f
+
 Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 	:
 	wnd(wnd),
@@ -15,6 +20,22 @@ Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }), 0.01f),
 	sim("Data\\position.txt", "Data\\orientation.txt", "Data\\time.txt", robot, wnd->Gfx())
 {	
+	for (size_t i = 0; i < GRID_HEIGHT; i++)
+	{
+		for (size_t j = 0; j < GRID_WIDTH; j++)
+		{
+			grid.push_back(std::make_unique<Plate>(wnd->Gfx(), 
+				DirectX::XMFLOAT2{ 20.0f, 20.0f },
+				DirectX::XMFLOAT3{ 0.0f + i * CELL_HEIGHT - GRID_HEIGHT * CELL_HEIGHT / 2.0f, 0.0f, 0.0f + j * CELL_WIDTH - GRID_WIDTH * CELL_WIDTH / 2.0f },
+				DirectX::XMFLOAT3{ 3.14 / 2, 0.0f, 0.0f }));
+		}
+	}
+
+	for (auto& c : grid)
+	{
+		c->LinkTechniques(rg);
+	}
+	
 	objects.cameras.AddCamera(robot.GetCamera());
 	robot.AttachGfx(rg);
 	sim.LinkTechniques(rg);
@@ -105,10 +126,16 @@ void Scene::Render(float dt)
 	//objects.Submit(Chan::main);
 	//objects.models.Submit(Chan::shadow);
 
+	for (auto& c : grid)
+	{
+		c->Submit(Chan::main);
+	}
+
 	sim.Draw(Chan::main);
 
 	robot.Render(Chan::main);
 	robot.Render(Chan::shadow);
+	
 
 	rg.Execute(wnd->Gfx());
 

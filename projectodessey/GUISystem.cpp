@@ -42,6 +42,8 @@ void GUISystem::Show()
 		ShowOptionalPanel();
 
 		ShowRobotControl();
+
+		ImGui::ShowDemoWindow();
 	}
 }
 
