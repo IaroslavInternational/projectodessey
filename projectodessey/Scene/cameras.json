@@ -1,1 +1,16 @@
-{"main camera":[{"name":"main camera","pitch":0.1749439537525177,"pos-x":-46.57646942138672,"pos-y":19.932090759277344,"pos-z":1.9208251237869263,"proj-farZ":400.0,"proj-height":0.5625,"proj-nearZ":0.5,"proj-width":1.0,"yaw":1.5371906757354736}]}
+{
+  "main camera": [
+    {
+      "name": "main camera",
+      "pitch": 0.44,
+      "pos-x": 46,
+      "pos-y": 20,
+      "pos-z": -20,
+      "proj-farZ": 400.0,
+      "proj-height": 0.5625,
+      "proj-nearZ": 0.5,
+      "proj-width": 1.0,
+      "yaw": -0.7
+    }
+  ]
+}

@@ -72,39 +72,64 @@ void Plate::CreatePlate()
 
 	auto tcb = std::make_shared<TransformCbuf>(gfx);
 	{
+		//{
+		//	Technique outline(Chan::main);
+		//	{
+		//		Step mask("outlineMask");
+		//
+		//		// TODO: better sub-layout generation tech for future consideration maybe
+		//		mask.AddBindable(InputLayout::Resolve(gfx, model.vertices.GetLayout(), *VertexShader::Resolve(gfx, "Solid_VS.cso")));
+		//
+		//		mask.AddBindable(std::move(tcb));
+		//
+		//		// TODO: might need to specify rasterizer when doubled-sided models start being used
+		//
+		//		outline.AddStep(std::move(mask));
+		//	}
+		//	{
+		//		Step draw("outlineDraw");
+		//
+		//		Dcb::RawLayout lay;
+		//		lay.Add<Dcb::Float4>("color");
+		//		auto buf = Dcb::Buffer(std::move(lay));
+		//		buf["color"] = pmc.color;
+		//		draw.AddBindable(std::make_shared<Bind::CachingPixelConstantBufferEx>(gfx, buf, 1u));
+		//
+		//		// TODO: better sub-layout generation tech for future consideration maybe
+		//		draw.AddBindable(InputLayout::Resolve(gfx, model.vertices.GetLayout(), *VertexShader::Resolve(gfx, "Solid_VS.cso")));
+		//
+		//		draw.AddBindable(std::make_shared<TransformCbuf>(gfx));
+		//
+		//		// TODO: might need to specify rasterizer when doubled-sided models start being used
+		//
+		//		outline.AddStep(std::move(draw));
+		//	}
+		//	AddTechnique(std::move(outline));
+		//}
+
 		{
-			Technique outline("Outline", Chan::main);
+			Technique solid{ Chan::main };
+			Step only("lambertian");
+
+			auto pvs = VertexShader::Resolve(gfx, "Solid_VS.cso");
+			only.AddBindable(InputLayout::Resolve(gfx, model.vertices.GetLayout(), *pvs));
+			only.AddBindable(std::move(pvs));
+
+			only.AddBindable(PixelShader::Resolve(gfx, "Solid_PS.cso"));
+
+			struct PSColorConstant
 			{
-				Step mask("outlineMask");
+				DirectX::XMFLOAT3 color = { 0.5f,0.5f,0.5f };
+				float padding;
+			} colorConst;
+			only.AddBindable(PixelConstantBuffer<PSColorConstant>::Resolve(gfx, colorConst, 1u));
 
-				// TODO: better sub-layout generation tech for future consideration maybe
-				mask.AddBindable(InputLayout::Resolve(gfx, model.vertices.GetLayout(), *VertexShader::Resolve(gfx, "Solid_VS.cso")));
+			only.AddBindable(std::make_shared<TransformCbuf>(gfx));
 
-				mask.AddBindable(std::move(tcb));
+			only.AddBindable(Rasterizer::Resolve(gfx, false));
 
-				// TODO: might need to specify rasterizer when doubled-sided models start being used
-
-				outline.AddStep(std::move(mask));
-			}
-			{
-				Step draw("outlineDraw");
-
-				Dcb::RawLayout lay;
-				lay.Add<Dcb::Float4>("color");
-				auto buf = Dcb::Buffer(std::move(lay));
-				buf["color"] = pmc.color;
-				draw.AddBindable(std::make_shared<Bind::CachingPixelConstantBufferEx>(gfx, buf, 1u));
-
-				// TODO: better sub-layout generation tech for future consideration maybe
-				draw.AddBindable(InputLayout::Resolve(gfx, model.vertices.GetLayout(), *VertexShader::Resolve(gfx, "Solid_VS.cso")));
-
-				draw.AddBindable(std::make_shared<TransformCbuf>(gfx));
-
-				// TODO: might need to specify rasterizer when doubled-sided models start being used
-
-				outline.AddStep(std::move(draw));
-			}
-			AddTechnique(std::move(outline));
+			solid.AddStep(std::move(only));
+			AddTechnique(std::move(solid));
 		}
 	}
 }

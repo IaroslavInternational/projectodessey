@@ -57,24 +57,12 @@ Window::Window(const char* name)
 	width = GetDeviceCaps(CreateDC(TEXT("DISPLAY"), NULL, NULL, NULL), HORZRES);
 	height = GetDeviceCaps(CreateDC(TEXT("DISPLAY"), NULL, NULL, NULL), VERTRES);
 
-	// Мод запуска окна
-#define ENGINE_WINDOW 0
-
-#if ENGINE_WINDOW == 0
 	// Создание окна
 	hWnd = CreateWindowEx(
 		WS_EX_APPWINDOW, WindowClass::GetName(), name, WS_POPUP | WS_MAXIMIZE,
 		CW_USEDEFAULT, CW_USEDEFAULT, width, height,
 		HWND_DESKTOP, NULL, WindowClass::GetInstance(), this
 	);
-#elif ENGINE_WINDOW == 1
-	// Создание окна
-	hWnd = CreateWindow(
-		WindowClass::GetName(), name, WS_CAPTION | WS_MAXIMIZE,
-		CW_USEDEFAULT, CW_USEDEFAULT, width, height,
-		HWND_DESKTOP, NULL, WindowClass::GetInstance(), this
-	);
-#endif // mode
 
 	// Проверка успешности создания
 	if( hWnd == nullptr )
@@ -89,7 +77,7 @@ Window::Window(const char* name)
 	// Инициализация ImGui Win32 Impl
 	ImGui_ImplWin32_Init( hWnd );
 
-	ImGui::GetIO().Fonts->AddFontFromFileTTF("Fonts\\Ubuntu-L.ttf", 14.0F, NULL,
+	ImGui::GetIO().Fonts->AddFontFromFileTTF("Fonts\\Ubuntu-L.ttf", 15.0F, NULL,
 		ImGui::GetIO().Fonts->GetGlyphRangesCyrillic());
 #endif // IS_ENGINE_MODE
 

@@ -42,8 +42,6 @@ void GUISystem::Show()
 		ShowOptionalPanel();
 
 		ShowRobotControl();
-
-		ImGui::ShowDemoWindow();
 	}
 }
 
@@ -323,34 +321,36 @@ void GUISystem::SetGuiColors()
 {
 	/*Стиль интерфейса*/
 
-	ImGui::GetStyle().FrameRounding    = 4.0f;								// Закругление компонентов
+	ImGui::GetStyle().FrameRounding    = 10.0f;								// Закругление компонентов
 	ImGui::GetStyle().WindowBorderSize = 0.0f;								// Размер границы
-	ImGui::GetStyle().WindowRounding   = 10.0f;								// Закругление окон
+	ImGui::GetStyle().WindowRounding   = 7.0f;								// Закругление окон
 
 	// Цвета
 	ImVec4* colors = ImGui::GetStyle().Colors;
-	colors[ImGuiCol_MenuBarBg] = ImVec4(0.15f, 0.36f, 0.39f, 1.00f);		// Главное меню
-	colors[ImGuiCol_WindowBg] = ImVec4(0.00f, 0.00f, 0.00f, 0.84f);			// Фон окна
-	colors[ImGuiCol_TitleBg] = ImVec4(0.24f, 0.00f, 0.20f, 0.73f);			// Меню окна
-	colors[ImGuiCol_TitleBgActive] = ImVec4(0.15f, 0.00f, 0.07f, 0.73f);	// Наведение на меню окна
-	colors[ImGuiCol_FrameBg] = ImVec4(0.00f, 0.50f, 0.38f, 0.54f);			// Компонента
-	colors[ImGuiCol_FrameBgHovered] = ImVec4(0.00f, 0.18f, 0.15f, 0.40f);	// Наведение на компоненту
-	colors[ImGuiCol_FrameBgActive] = ImVec4(0.06f, 0.48f, 0.45f, 0.67f);	// Активные компонента
+	colors[ImGuiCol_MenuBarBg] = ImVec4(0.46f, 0.47f, 0.52f, 1.00f);		// Главное меню
+	colors[ImGuiCol_WindowBg] = ImVec4(0.70f, 0.70f, 0.74f, 0.85f);			// Фон окна
+	colors[ImGuiCol_TitleBg] = ImVec4(0.82f, 0.82f, 0.83f, 1.0f);			// Меню окна
+	colors[ImGuiCol_TitleBgActive] = ImVec4(0.58f, 0.58f, 0.63f, 1.00f);	// Наведение на меню окна
+	colors[ImGuiCol_FrameBg] = ImVec4(0.47f, 0.47f, 0.47f, 0.59f);			// Компонента
+	colors[ImGuiCol_FrameBgHovered] = ImVec4(0.80f, 0.80f, 0.80f, 0.40f);	// Наведение на компоненту
+	colors[ImGuiCol_FrameBgActive] = ImVec4(0.25f, 0.42f, 0.41f, 0.67f);	// Активные компонента
 	colors[ImGuiCol_CheckMark] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);		// Галочка
-	colors[ImGuiCol_SliderGrab] = ImVec4(0.37f, 0.70f, 0.00f, 1.00f);		// Ползунок слайдера
-	colors[ImGuiCol_SliderGrabActive] = ImVec4(0.62f, 0.82f, 0.19f, 1.00f);	// Актвиный ползунок слайдера
+	colors[ImGuiCol_SliderGrab] = ImVec4(0.25f, 0.07f, 0.07f, 1.00f);		// Ползунок слайдера
+	colors[ImGuiCol_SliderGrabActive] = ImVec4(0.42f, 0.22f, 0.11f, 1.00f);	// Актвиный ползунок слайдера
 	colors[ImGuiCol_Button] = ImVec4(0.56f, 0.05f, 0.05f, 0.59f);			// Кнопка
-	colors[ImGuiCol_ButtonHovered] = ImVec4(0.26f, 0.01f, 0.17f, 1.00f);	// Наведение на кнопку
-	colors[ImGuiCol_ButtonActive] = ImVec4(0.03f, 0.55f, 0.48f, 1.00f);		// Активная кнопка
+	colors[ImGuiCol_ButtonHovered] = ImVec4(0.64f, 0.22f, 0.22f, 1.00f);	// Наведение на кнопку
+	colors[ImGuiCol_ButtonActive] = ImVec4(0.29f, 0.52f, 0.49f, 1.00f);  	// Активная кнопка
 	colors[ImGuiCol_Separator] = ImVec4(0.66f, 0.60f, 0.00f, 0.50f);		// Разделитель
-	colors[ImGuiCol_Tab] = ImVec4(0.00f, 0.08f, 0.27f, 0.86f);				// Раздел
-	colors[ImGuiCol_TabHovered] = ImVec4(0.01f, 0.43f, 0.63f, 0.80f);		// Наведение на раздел
-	colors[ImGuiCol_TabActive] = ImVec4(0.66f, 0.60f, 0.00f, 0.50f);		// Активный раздел
+	colors[ImGuiCol_Tab] = ImVec4(0.35f, 0.30f, 0.30f, 0.86f);				// Раздел
+	colors[ImGuiCol_TabHovered] = ImVec4(0.50f, 0.47f, 0.46f, 0.80f);		// Наведение на раздел
+	colors[ImGuiCol_TabActive] = ImVec4(0.40f, 0.18f, 0.08f, 0.50f);		// Активный раздел
 	colors[ImGuiCol_ScrollbarGrab] = ImVec4(0.19f, 0.67f, 0.65f, 1.00f);	// Ползунок
 	colors[ImGuiCol_TableHeaderBg] = ImVec4(0.31f, 0.04f, 0.04f, 0.81f);	// Блок заголовка таблицы
-	colors[ImGuiCol_Header] = ImVec4(0.50f, 0.09f, 0.70f, 0.31f);			// Заголовок
-	colors[ImGuiCol_HeaderActive] = ImVec4(0.00f, 0.57f, 0.49f, 1.00f);		// Активный заголовок
-	colors[ImGuiCol_HeaderHovered] = ImVec4(0.40f, 0.22f, 0.59f, 0.80f);	// Наведение на заголовк
+	colors[ImGuiCol_Header] = ImVec4(0.59f, 0.57f, 0.60f, 0.77f);			// Заголовок
+	colors[ImGuiCol_HeaderActive] = ImVec4(0.25f, 0.42f, 0.41f, 0.67f);		// Активный заголовок
+	colors[ImGuiCol_HeaderHovered] = ImVec4(0.76f, 0.76f, 0.76f, 0.80f);	// Наведение на заголовк
+	colors[ImGuiCol_Text] = ImVec4(0.00f, 0.00f, 0.00f, 1.00f);
+	colors[ImGuiCol_PopupBg] = ImVec4(0.68f, 0.68f, 0.68f, 0.94f);
 
 	/******************/
 }
@@ -488,6 +488,18 @@ void GUISystem::ShowModelsControl()
 						)
 					);
 
+					if (ImGui::Button("Удалить", ImVec2(100, 20)))
+					{
+						IsDelete = true;
+					}
+
+					ImGui::SameLine();
+
+					if (ImGui::Button("Сохранить", ImVec2(100, 20)))
+					{
+						IsSave = true;
+					}
+
 					ImGui::EndChild();
 				}
 
@@ -517,18 +529,6 @@ void GUISystem::ShowModelsControl()
 
 				break;
 			}
-		}
-
-		if (ImGui::Button("Удалить", ImVec2(100, 20)))
-		{
-			IsDelete = true;
-		}
-
-		ImGui::SameLine();
-
-		if (ImGui::Button("Сохранить", ImVec2(100, 20)))
-		{
-			IsSave = true;
 		}
 	}
 

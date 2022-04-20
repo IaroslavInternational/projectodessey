@@ -18,7 +18,7 @@ public:
 		  DirectX::XMFLOAT2 size, 
 		  DirectX::XMFLOAT3 position =	  { 0.0f, 0.0f, 0.0f },
 		  DirectX::XMFLOAT3 orientation = { 0.0f, 0.0f, 0.0f},
-		  DirectX::XMFLOAT4 color =		  { 0.0f, 192.0f, 204.0f, 0.0f });
+		  DirectX::XMFLOAT4 color =		  { 0.0f, 0.0f, 0.0f, 0.0f });
 public:
 	// Установить размер
 	// size.x - ширина,

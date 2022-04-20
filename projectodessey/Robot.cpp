@@ -27,67 +27,16 @@ std::shared_ptr<Camera> Robot::GetCamera()
 	return camera;
 }
 
-void Robot::Translate(DirectX::XMFLOAT3 translation)
-{
-	model->Translate(translation);
-	camera->Translate(translation);
-}
-
-void Robot::Rotate(DirectX::XMFLOAT3 rotation)
-{
-	if (!(GetOrientation().x >= -0.79f && GetOrientation().x <= 0.79f))
-	{
-		if (GetOrientation().x < 0.0f)
-		{
-			model->SetOrientation({ -0.79f, GetOrientation().y, GetOrientation().z });
-		}
-		else
-		{
-			model->SetOrientation({ 0.79f, GetOrientation().y, GetOrientation().z });
-		}
-
-		rotation.x = 0.0f;
-	}
-
-	if (!(GetOrientation().y >= -0.79f && GetOrientation().y <= 0.79f))
-	{
-		if (GetOrientation().y < 0.0f)
-		{
-			model->SetOrientation({ GetOrientation().x, -0.79f, GetOrientation().z });
-		}
-		else
-		{
-			model->SetOrientation({ GetOrientation().x, 0.79f, GetOrientation().z });
-		}
-
-		rotation.y = 0.0f;
-	}
-
-	if (!(GetOrientation().z > -0.79f && GetOrientation().z < 0.79f))
-	{
-		if (GetOrientation().z < 0.0f)
-		{
-			model->SetOrientation({ GetOrientation().x, GetOrientation().y, -0.79f });
-		}
-		else
-		{
-			model->SetOrientation({ GetOrientation().x, GetOrientation().y, 0.79f });
-		}
-
-		rotation.z = 0.0f;
-	}
-
-	model->Rotate(rotation);
-}
-
 void Robot::SetPosition(DirectX::XMFLOAT3 position)
 {
 	model->SetPosition(position);
+	camera->SetPosition(position);
 }
 
 void Robot::SetOrientation(DirectX::XMFLOAT3 orientation)
 {
 	model->SetOrientation(orientation);
+	camera->SetOrientation(orientation);
 }
 
 DirectX::XMFLOAT3 Robot::GetPosition()

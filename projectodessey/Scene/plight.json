@@ -1,19 +1,19 @@
 {
   "Sun": [
     {
-      "pos-x": 10.629400253295898,
-      "pos-y": 21.818199157714844,
-      "pos-z": 0.0,
-      "ambient-r": 0.05,
-      "ambient-g": 0.05,
-      "ambient-b": 0.05,
+      "pos-x": 19,
+      "pos-y": 33,
+      "pos-z": 44,
+      "ambient-r": 0.447,
+      "ambient-g": 0.447,
+      "ambient-b": 0.447,
       "diffuse-r": 1.0,
       "diffuse-g": 1.0,
       "diffuse-b": 1.0,
-      "diffuse-intensity": 1.0,
-      "att-const": 1.0,
-      "att-lin": 0.025,
-      "att-quad": 0.0030
+      "diffuse-intensity": 1.5,
+      "att-const": 0.43,
+      "att-lin": 0.0001,
+      "att-quad": 0.00192309
     }
   ]
 }

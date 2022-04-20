@@ -6,8 +6,8 @@
 
 #include <sstream>
 
-#define GRID_WIDTH  20.0f
-#define GRID_HEIGHT 20.0f
+#define GRID_WIDTH  20
+#define GRID_HEIGHT 20
 #define CELL_WIDTH  20.0f
 #define CELL_HEIGHT 20.0f
 
@@ -25,8 +25,8 @@ Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 		for (size_t j = 0; j < GRID_WIDTH; j++)
 		{
 			grid.push_back(std::make_unique<Plate>(wnd->Gfx(), 
-				DirectX::XMFLOAT2{ 20.0f, 20.0f },
-				DirectX::XMFLOAT3{ 0.0f + i * CELL_HEIGHT - GRID_HEIGHT * CELL_HEIGHT / 2.0f, 0.0f, 0.0f + j * CELL_WIDTH - GRID_WIDTH * CELL_WIDTH / 2.0f },
+				DirectX::XMFLOAT2{ GRID_WIDTH, GRID_HEIGHT },
+				DirectX::XMFLOAT3{ i * CELL_HEIGHT - GRID_HEIGHT * CELL_HEIGHT / 2.0f, 0.0f, j * CELL_WIDTH - GRID_WIDTH * CELL_WIDTH / 2.0f },
 				DirectX::XMFLOAT3{ 3.14 / 2, 0.0f, 0.0f }));
 		}
 	}
@@ -123,8 +123,8 @@ void Scene::Render(float dt)
 	objects.pLight.Bind(wnd->Gfx(), objects.cameras->GetMatrix());
 	rg.BindMainCamera(objects.cameras.GetActiveCamera());
 
-	//objects.Submit(Chan::main);
-	//objects.models.Submit(Chan::shadow);
+	objects.Submit(Chan::main);
+	objects.models.Submit(Chan::shadow);
 
 	for (auto& c : grid)
 	{
@@ -135,7 +135,6 @@ void Scene::Render(float dt)
 
 	robot.Render(Chan::main);
 	robot.Render(Chan::shadow);
-	
 
 	rg.Execute(wnd->Gfx());
 

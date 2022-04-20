@@ -19,8 +19,6 @@ public:
 	void					Render(size_t channel);
 	std::shared_ptr<Camera> GetCamera();
 public:
-	void			  Translate(DirectX::XMFLOAT3 translation);
-	void			  Rotate(DirectX::XMFLOAT3 rotation);
 	void			  SetPosition(DirectX::XMFLOAT3 position);
 	void			  SetOrientation(DirectX::XMFLOAT3 orientation);
 	DirectX::XMFLOAT3 GetPosition();

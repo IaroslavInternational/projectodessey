@@ -1,12 +1,12 @@
 {
-  "polig.obj": [
+  "polygon.obj": [
     {
-      "name": "polig.obj",
-      "path": "Scene/Models/Pool/polig.obj",
-      "scale": 60,
+      "name": "polygon.obj",
+      "path": "Scene/Models/Poly/Polygon.obj",
+      "scale": 40,
       "pos-x": 0,
       "pos-y": 0,
-      "pos-z": 0,
+      "pos-z": 45,
       "roll": 0,
       "pitch": 0,
       "yaw": 0
