@@ -13,10 +13,11 @@ Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 	robot("SevROV", "Scene\\Models\\Robot\\robot.obj", wnd->Gfx(), wnd,
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }),
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }), 0.01f),
-	sim("Data\\position.txt", "Data\\orientation.txt", "Data\\time.txt", robot)
+	sim("Data\\position.txt", "Data\\orientation.txt", "Data\\time.txt", robot, wnd->Gfx())
 {	
 	objects.cameras.AddCamera(robot.GetCamera());
 	robot.AttachGfx(rg);
+	sim.LinkTechniques(rg);
 	objects.LinkTechniques(rg);
 }
 
@@ -103,6 +104,8 @@ void Scene::Render(float dt)
 
 	//objects.Submit(Chan::main);
 	//objects.models.Submit(Chan::shadow);
+
+	sim.Draw(Chan::main);
 
 	robot.Render(Chan::main);
 	robot.Render(Chan::shadow);
