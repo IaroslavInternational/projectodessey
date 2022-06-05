@@ -18,7 +18,8 @@ Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 	robot("SevROV", "Scene\\Models\\Robot\\robot.obj", wnd->Gfx(), wnd,
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }),
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }), 0.01f),
-	sim("Data\\position.txt", "Data\\orientation.txt", "Data\\time.txt", robot, wnd->Gfx())
+	sim("Data\\position.txt", "Data\\orientation.txt", "Data\\time.txt", robot, wnd->Gfx()),
+	demo(wnd->Gfx(), { 12.0f, 5.0f }, { 28.0f, 0.0f, 30.0f })
 {	
 	for (size_t i = 0; i < GRID_HEIGHT; i++)
 	{
@@ -36,6 +37,7 @@ Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 		c->LinkTechniques(rg);
 	}
 	
+	demo.LinkTechniques(rg);
 	objects.cameras.AddCamera(robot.GetCamera());
 	robot.AttachGfx(rg);
 	sim.LinkTechniques(rg);
@@ -115,13 +117,18 @@ void Scene::ProcessInput(float dt)
 		}
 	}
 
-	sim.Simulate(dt);
+	if (!robot.IsCollide(demo))
+	{
+		sim.Simulate(dt);
+	}
 }
 
 void Scene::Render(float dt)
 {
 	objects.pLight.Bind(wnd->Gfx(), objects.cameras->GetMatrix());
 	rg.BindMainCamera(objects.cameras.GetActiveCamera());
+
+	demo.Submit(Chan::main);
 
 	objects.Submit(Chan::main);
 	objects.models.Submit(Chan::shadow);

@@ -7,6 +7,8 @@
 #include "EngineFunctions.hpp"
 #include "Camera.h"
 
+#include "TestModelProbe.h"
+
 GUISystem::GUISystem(Scene* scene)
 	:
 	pLight(&scene->objects.pLight),
@@ -471,7 +473,7 @@ void GUISystem::ShowModelsControl()
 
 					ImGui::Text("Ориентация");
 					dcheck(ImGui::SliderAngle("Крен",     &models->models[k]->orientation.x, 0.995f * -90.0f, 0.995f * 90.0f), rotDirty);
-					dcheck(ImGui::SliderAngle("Тангаш",   &models->models[k]->orientation.y, 0.995f * -90.0f, 0.995f * 90.0f), rotDirty);
+					dcheck(ImGui::SliderAngle("Тангаж",   &models->models[k]->orientation.y, 0.995f * -90.0f, 0.995f * 90.0f), rotDirty);
 					dcheck(ImGui::SliderAngle("Расканье", &models->models[k]->orientation.z, -180.0f, 180.0f), rotDirty);
 
 					ImGui::Checkbox("Скрыть", &models->models[k]->visibility);
@@ -499,6 +501,9 @@ void GUISystem::ShowModelsControl()
 					{
 						IsSave = true;
 					}
+
+					//static MP p{"proba"};
+					//p.SpawnChildWindow(*models->models[k].get());
 
 					ImGui::EndChild();
 				}
@@ -737,7 +742,7 @@ void GUISystem::ShowRobotControl()
 	ImVec2 DispSize = io.DisplaySize;
 
 	ImVec2 PanelSize = ImVec2(
-		round(DispSize.x * 0.25f),
+		round(DispSize.x * 0.3f),
 		DispSize.y * 0.5f
 	);
 
@@ -754,20 +759,28 @@ void GUISystem::ShowRobotControl()
 		dcheck(ImGui::SliderFloat("X", &rb->model->position.x, -80.0f, 80.0f, "%.4f"), posDirty);
 		dcheck(ImGui::SliderFloat("Y", &rb->model->position.y, -80.0f, 80.0f, "%.4f"), posDirty);
 		dcheck(ImGui::SliderFloat("Z", &rb->model->position.z, -80.0f, 80.0f, "%.4f"), posDirty);
+		
+		ImGui::Text("Позиция сферы");
+		dcheck(ImGui::SliderFloat("Xs", &rb->hb.sphere.Center.x, -80.0f, 80.0f, "%.4f"), posDirty);
+		dcheck(ImGui::SliderFloat("Ys", &rb->hb.sphere.Center.y, -80.0f, 80.0f, "%.4f"), posDirty);
+		dcheck(ImGui::SliderFloat("Zs", &rb->hb.sphere.Center.z, -80.0f, 80.0f, "%.4f"), posDirty);
 
 		ImGui::Text("Ориентация");
 		dcheck(ImGui::SliderAngle("Крен", &rb->model->orientation.x, 0.995f * -90.0f, 0.995f * 90.0f), rotDirty);
-		dcheck(ImGui::SliderAngle("Тангаш", &rb->model->orientation.y, 0.995f * -90.0f, 0.995f * 90.0f), rotDirty);
+		dcheck(ImGui::SliderAngle("Тангаж", &rb->model->orientation.y, 0.995f * -90.0f, 0.995f * 90.0f), rotDirty);
 		dcheck(ImGui::SliderAngle("Расканье", &rb->model->orientation.z, -180.0f, 180.0f), rotDirty);
 
 		ImGui::Checkbox("Скрыть", &rb->model->visibility);
 
+		ImGui::Separator();
+
 		std::ostringstream oss;
-		oss << "Время симуляции: " << sim->time_counter << " сек.\n"
-			<< "Итерация: " << sim->iteration << "\n"
-			<< "Всего итераций: " << sim->data.GetIterations();
+		oss << "Симуляция";
 
 		ImGui::Text(oss.str().c_str());
+
+		ImGui::SliderFloat("Время симуляции", &sim->time_counter, 0.0f, 50.0f);
+		ImGui::SliderInt("Итерация", reinterpret_cast<int*>(&sim->iteration), 0, sim->data.GetIterations());
 
 		rb->model->SetRootTransform
 		(

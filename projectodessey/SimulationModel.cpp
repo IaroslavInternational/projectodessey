@@ -59,7 +59,6 @@ void SimulationModel::Simulate(float dt)
 	time_counter += dt * speed;
 	while (time_counter >= data.GetTime(iteration))
 	{
-
 		if (!(iteration < data.GetIterations()))
 		{
 			OnSim = false;

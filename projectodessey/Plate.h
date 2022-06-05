@@ -2,6 +2,7 @@
 
 #include "Drawable.h"
 #include "IndexedTriangleList.h"
+#include <DirectXCollision.h>
 
 // Представляет собой графический объект на сцене в виде не осязаемой прозрачной платформы,
 // имеющей контур. Используется в классе Trigger для отображения области распространения действия триггера
@@ -32,6 +33,8 @@ public:
 	void			  SetRotation(DirectX::XMFLOAT3 orientation) noexcept;
 
 	void			  UpdateSize(DirectX::XMFLOAT2 size);
+
+	DirectX::BoundingBox& CreateBBox();
 
 	// Получить размер
 	// size.x - ширина,

@@ -24,7 +24,7 @@ DataParser::DataParser(const std::string& file_pos, const std::string& file_orie
                 std::sregex_token_iterator()
         };
 
-        positions.push_back({ std::stof(vals[0]), std::stof(vals[1]), std::stof(vals[2]) });
+        positions.push_back({ std::stof(vals[0]), std::stof(vals[2]), std::stof(vals[1]) });
     }
 
     for (auto& line : data_o)
@@ -35,7 +35,7 @@ DataParser::DataParser(const std::string& file_pos, const std::string& file_orie
                 std::sregex_token_iterator()
         };
 
-        orientations.push_back({ std::stof(vals[0]), std::stof(vals[1]), std::stof(vals[2]) });
+        orientations.push_back({ std::stof(vals[1]), std::stof(vals[0]), std::stof(vals[2]) });
     }
 
     for (auto& line : data_t)

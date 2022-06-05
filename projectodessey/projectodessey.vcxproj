@@ -110,6 +110,7 @@
     <ClCompile Include="CubeTexture.cpp" />
     <ClCompile Include="DataParser.cpp" />
     <ClCompile Include="GUISystem.cpp" />
+    <ClCompile Include="HitBox.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\ImGuiFileDialog.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
@@ -339,6 +340,7 @@
     <ClInclude Include="EngineConverter.h" />
     <ClInclude Include="EngineFunctions.hpp" />
     <ClInclude Include="GUISystem.h" />
+    <ClInclude Include="HitBox.h" />
     <ClInclude Include="imgui\dirent\dirent.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />

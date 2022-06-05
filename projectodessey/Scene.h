@@ -29,4 +29,5 @@ private:
 	Robot						 robot;
 	SimulationModel				 sim;
 	std::vector<std::unique_ptr<Plate>> grid;
+	Plate demo;
 };

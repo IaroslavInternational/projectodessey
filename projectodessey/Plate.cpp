@@ -45,6 +45,15 @@ void Plate::UpdateSize(DirectX::XMFLOAT2 size)
 	CreatePlate();
 }
 
+DirectX::BoundingBox& Plate::CreateBBox()
+{
+	DirectX::BoundingBox box;
+	box.Center = position;
+	box.Extents = { size.x / 2, size.y / 2, 2.5 / 2 };
+
+	return box;
+}
+
 DirectX::XMFLOAT2 Plate::GetSize() const noexcept
 {
 	return size;

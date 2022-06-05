@@ -4,6 +4,7 @@
 #include "Camera.h"
 #include <memory>
 #include "Window.h"
+#include "HitBox.h"
 
 class Robot
 {
@@ -23,9 +24,11 @@ public:
 	void			  SetOrientation(DirectX::XMFLOAT3 orientation);
 	DirectX::XMFLOAT3 GetPosition();
 	DirectX::XMFLOAT3 GetOrientation();
+	bool			  IsCollide(Plate& plate);
 private:
 	std::unique_ptr<Model>  model;
 	std::shared_ptr<Camera> camera;
 	std::shared_ptr<Window> wnd;
+	HitBox hb;
 };
 

@@ -5,7 +5,8 @@ Robot::Robot(std::string name, const std::string& path, Graphics& gfx, std::shar
 	   DirectX::XMFLOAT3 orientation,
 	   float scale)
 	:
-	wnd(wnd)
+	wnd(wnd),
+	hb(position)
 {
 	model = std::make_unique<Model>(name, path, gfx, position, orientation, scale);
 	camera = std::make_shared<Camera>(name + std::string(" cam"), gfx, position, orientation);
@@ -31,6 +32,7 @@ void Robot::SetPosition(DirectX::XMFLOAT3 position)
 {
 	model->SetPosition(position);
 	camera->SetPosition(position);
+	hb.Translate({ position.x, position.y, position.z});
 }
 
 void Robot::SetOrientation(DirectX::XMFLOAT3 orientation)
@@ -47,4 +49,9 @@ DirectX::XMFLOAT3 Robot::GetPosition()
 DirectX::XMFLOAT3 Robot::GetOrientation()
 {
 	return model->GetOrientation();
+}
+
+bool Robot::IsCollide(Plate& plate)
+{
+	return hb.IsCollide(plate);
 }
