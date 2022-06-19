@@ -35,6 +35,7 @@ private:
 	void ShowPLightControl();	//
 
 	void ShowRobotControl();
+	void ShowSimulationParams();
 
 	void LoadModel(std::string name, std::string path);
 	void OpenDialog();
@@ -44,6 +45,7 @@ private:
 	bool ShowCamerasSettings  = false;  // Левая панель камер на сцене с настройками
 	bool ShowPLightSettings   = false;  // Правая панель управления настройками точечных источников света
 	bool ShowRobotSettings	  = true;	//
+	bool ShowSimSettings	  = true;	//
 	bool ShowHardwareInfo     = true;  // FPS и информация о графическом адаптере
 	bool ShowLogs		      = true;  // Лог
 private:

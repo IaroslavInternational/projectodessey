@@ -128,7 +128,7 @@ void Plate::CreatePlate()
 
 			struct PSColorConstant
 			{
-				DirectX::XMFLOAT3 color = { 0.5f,0.5f,0.5f };
+				DirectX::XMFLOAT3 color = { 0.12f,0.56f,1.0f };
 				float padding;
 			} colorConst;
 			only.AddBindable(PixelConstantBuffer<PSColorConstant>::Resolve(gfx, colorConst, 1u));

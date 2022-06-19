@@ -1,0 +1,39 @@
+{
+  "model state": [
+    {
+      "pitch": 0.0,
+      "roll": 0.0,
+      "x": 0,
+      "y": 0.0,
+      "yaw": 0,
+      "z": 0
+    }
+  ],
+  "model velocity": [
+    {
+      "pitch": 0,
+      "roll": 0,
+      "x": 0,
+      "y": 0,
+      "yaw": 0,
+      "z": 0
+    }
+  ],
+  "tau": [
+    {
+      "pitch": 0,
+      "roll": 0,
+      "x": 0,
+      "y": 0,
+      "yaw": 0,
+      "z": 0
+    }
+  ],
+  "time span": [
+    {
+      "max": 50.0,
+      "min": 0.0,
+      "step": 0.01
+    }
+  ]
+}

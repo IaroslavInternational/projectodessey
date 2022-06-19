@@ -151,11 +151,7 @@ namespace Rgph
 
 	void BlurOutlineRenderGraph::RenderWindows(Graphics& gfx)
 	{
-		if (ImGui::Begin("Контур моделей", NULL,
-			ImGuiWindowFlags_NoMove |
-			ImGuiWindowFlags_NoResize |
-			ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoCollapse |
-			ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoBringToFrontOnFocus))
+		if (ImGui::Begin("Контур моделей", NULL))
 		{
 			RenderKernelWindow(gfx);
 			dynamic_cast<SkyboxPass&>(FindPassByName("skybox")).RenderWindow();

@@ -19,7 +19,7 @@ Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }),
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }), 0.01f),
 	sim("Data\\position.txt", "Data\\orientation.txt", "Data\\time.txt", robot, wnd->Gfx()),
-	demo(wnd->Gfx(), { 12.0f, 5.0f }, { 28.0f, 0.0f, 30.0f })
+	demo(wnd->Gfx(), { 12.0f, 5.0f }, { 28.0f, 0.0f, 30.0f }, { 0.0f, 0.0f, 0.0f }, DirectX::XMFLOAT4{0.12f, 0.56f, 1.0f, 1.0f})
 {	
 	for (size_t i = 0; i < GRID_HEIGHT; i++)
 	{
@@ -28,7 +28,8 @@ Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 			grid.push_back(std::make_unique<Plate>(wnd->Gfx(), 
 				DirectX::XMFLOAT2{ GRID_WIDTH, GRID_HEIGHT },
 				DirectX::XMFLOAT3{ i * CELL_HEIGHT - GRID_HEIGHT * CELL_HEIGHT / 2.0f, 0.0f, j * CELL_WIDTH - GRID_WIDTH * CELL_WIDTH / 2.0f },
-				DirectX::XMFLOAT3{ 3.14 / 2, 0.0f, 0.0f }));
+				DirectX::XMFLOAT3{ 3.14 / 2, 0.0f, 0.0f },
+				DirectX::XMFLOAT4{ 0.5f, 0.5f, 0.5f, 1.0f }));
 		}
 	}
 
@@ -66,12 +67,6 @@ void Scene::ProcessInput(float dt)
 				wnd->EnableCursor();
 				wnd->mouse.DisableRaw();
 			}
-			break;
-		case 0x45:
-			sim.Start();
-			break;
-		case 0x46:
-			sim.Stop();
 			break;
 		case VK_RETURN:
 			savingDepth = true;
@@ -135,7 +130,7 @@ void Scene::Render(float dt)
 
 	for (auto& c : grid)
 	{
-		c->Submit(Chan::main);
+		//c->Submit(Chan::main);
 	}
 
 	sim.Draw(Chan::main);
@@ -144,6 +139,7 @@ void Scene::Render(float dt)
 	robot.Render(Chan::shadow);
 
 	rg.Execute(wnd->Gfx());
+	//rg.RenderWindows(wnd->Gfx());
 
 	if (savingDepth)
 	{

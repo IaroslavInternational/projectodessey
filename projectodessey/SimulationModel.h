@@ -28,5 +28,23 @@ private:
 	size_t iteration = 0;
 	float  time_counter = 0.0f;
 	float  speed = 1.0f;
+private:
+	struct
+	{
+		float  max = 50.0f;
+		float  min = 0.0f;
+		float  step = 0.01f;
+	} timeArgs;
+	struct
+	{
+		DirectX::XMFLOAT3 position;
+		DirectX::XMFLOAT3 orientation;
+		DirectX::XMFLOAT3 velocity;
+		DirectX::XMFLOAT3 axis_velocity;
+	} initialState;
+	struct
+	{
+		DirectX::XMFLOAT3 linear;
+		DirectX::XMFLOAT3 angle;
+	} tau;
 };
-

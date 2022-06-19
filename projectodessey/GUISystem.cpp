@@ -44,6 +44,7 @@ void GUISystem::Show()
 		ShowOptionalPanel();
 
 		ShowRobotControl();
+		ShowSimulationParams();
 	}
 }
 
@@ -476,7 +477,7 @@ void GUISystem::ShowModelsControl()
 					dcheck(ImGui::SliderAngle("Тангаж",   &models->models[k]->orientation.y, 0.995f * -90.0f, 0.995f * 90.0f), rotDirty);
 					dcheck(ImGui::SliderAngle("Расканье", &models->models[k]->orientation.z, -180.0f, 180.0f), rotDirty);
 
-					ImGui::Checkbox("Скрыть", &models->models[k]->visibility);
+					ImGui::Checkbox("Показать", &models->models[k]->visibility);
 
 					models->models[k]->SetRootTransform
 					(
@@ -513,14 +514,16 @@ void GUISystem::ShowModelsControl()
 					auto position    = models->models[k]->position;
 					auto orientation = models->models[k]->orientation;
 					auto name		 = models->models[k]->name;
+					
+					std::string path = "Scene\\Models\\models.json";
 
-					/*EngineFunctions::SetNewValue<float>(name, "pos-x", position.x, path, applog);
-					EngineFunctions::SetNewValue<float>(name, "pos-y", position.y, path, applog);
-					EngineFunctions::SetNewValue<float>(name, "pos-z", position.z, path, applog);
+					EngineFunctions::SetNewValue<float>(name, "pos-x", position.x, path, &applog);
+					EngineFunctions::SetNewValue<float>(name, "pos-y", position.y, path, &applog);
+					EngineFunctions::SetNewValue<float>(name, "pos-z", position.z, path, &applog);
 
-					EngineFunctions::SetNewValue<float>(name, "roll", orientation.x, path, applog);
-					EngineFunctions::SetNewValue<float>(name, "pitch", orientation.y, path, applog);
-					EngineFunctions::SetNewValue<float>(name, "yaw", orientation.z, path, applog);*/
+					EngineFunctions::SetNewValue<float>(name, "roll", orientation.x, path, &applog);
+					EngineFunctions::SetNewValue<float>(name, "pitch", orientation.y, path, &applog);
+					EngineFunctions::SetNewValue<float>(name, "yaw", orientation.z, path, &applog);
 
 					IsSave = false;
 				}
@@ -738,16 +741,7 @@ void GUISystem::ShowPLightControl()
 
 void GUISystem::ShowRobotControl()
 {
-	ImGuiIO& io = ImGui::GetIO();
-	ImVec2 DispSize = io.DisplaySize;
-
-	ImVec2 PanelSize = ImVec2(
-		round(DispSize.x * 0.3f),
-		DispSize.y * 0.5f
-	);
-
-	ImGui::SetNextWindowSize(PanelSize);
-	if (ImGui::Begin("ТНПА", &ShowRobotSettings, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse))
+	if (ImGui::Begin("ТНПА", &ShowRobotSettings, ImGuiWindowFlags_AlwaysAutoResize))
 	{
 		bool rotDirty = false;
 		bool posDirty = false;
@@ -759,28 +753,13 @@ void GUISystem::ShowRobotControl()
 		dcheck(ImGui::SliderFloat("X", &rb->model->position.x, -80.0f, 80.0f, "%.4f"), posDirty);
 		dcheck(ImGui::SliderFloat("Y", &rb->model->position.y, -80.0f, 80.0f, "%.4f"), posDirty);
 		dcheck(ImGui::SliderFloat("Z", &rb->model->position.z, -80.0f, 80.0f, "%.4f"), posDirty);
-		
-		ImGui::Text("Позиция сферы");
-		dcheck(ImGui::SliderFloat("Xs", &rb->hb.sphere.Center.x, -80.0f, 80.0f, "%.4f"), posDirty);
-		dcheck(ImGui::SliderFloat("Ys", &rb->hb.sphere.Center.y, -80.0f, 80.0f, "%.4f"), posDirty);
-		dcheck(ImGui::SliderFloat("Zs", &rb->hb.sphere.Center.z, -80.0f, 80.0f, "%.4f"), posDirty);
 
 		ImGui::Text("Ориентация");
 		dcheck(ImGui::SliderAngle("Крен", &rb->model->orientation.x, 0.995f * -90.0f, 0.995f * 90.0f), rotDirty);
 		dcheck(ImGui::SliderAngle("Тангаж", &rb->model->orientation.y, 0.995f * -90.0f, 0.995f * 90.0f), rotDirty);
 		dcheck(ImGui::SliderAngle("Расканье", &rb->model->orientation.z, -180.0f, 180.0f), rotDirty);
 
-		ImGui::Checkbox("Скрыть", &rb->model->visibility);
-
-		ImGui::Separator();
-
-		std::ostringstream oss;
-		oss << "Симуляция";
-
-		ImGui::Text(oss.str().c_str());
-
-		ImGui::SliderFloat("Время симуляции", &sim->time_counter, 0.0f, 50.0f);
-		ImGui::SliderInt("Итерация", reinterpret_cast<int*>(&sim->iteration), 0, sim->data.GetIterations());
+		ImGui::Checkbox("Показать", &rb->model->visibility);
 
 		rb->model->SetRootTransform
 		(
@@ -793,6 +772,78 @@ void GUISystem::ShowRobotControl()
 				rb->model->position.z
 			)
 		);
+	}
+
+	ImGui::End();
+}
+
+void GUISystem::ShowSimulationParams()
+{
+	if (ImGui::Begin("Параметры симуляции", &ShowSimSettings, ImGuiWindowFlags_AlwaysAutoResize))
+	{
+		std::ostringstream oss;
+		oss << "Время симуляции: " << sim->time_counter;
+		ImGui::Text(oss.str().c_str());
+
+		oss.str("");
+		oss << "Итерация: " << sim->iteration;
+		ImGui::Text(oss.str().c_str());
+
+		ImGui::NewLine();
+
+		ImGui::SliderFloat("t min",    &sim->timeArgs.min,  0.0f,   500.0f);
+		ImGui::SliderFloat("t max",	   &sim->timeArgs.max,  0.0f,   500.0f);
+		ImGui::SliderFloat("Шаг",      &sim->timeArgs.step, 0.005f, 0.5f,  "%.3f");
+		ImGui::SliderFloat("Скорость", &sim->speed,			0.2f,   10.0f, "%.1f");
+
+		ImGui::NewLine();
+
+		ImGui::Text("Начальная позиция:");
+		ImGui::SliderFloat("X", &sim->initialState.position.x, -80.0f, 80.0f);
+		ImGui::SliderFloat("Y", &sim->initialState.position.y, -80.0f, 80.0f);
+		ImGui::SliderFloat("Z", &sim->initialState.position.z, -80.0f, 80.0f);
+		ImGui::Text("Начальная ориентация");
+		ImGui::SliderAngle("Крен",	   &sim->initialState.orientation.x, 0.995f * -90.0f, 0.995f * 90.0f);
+		ImGui::SliderAngle("Тангаж",   &sim->initialState.orientation.y, 0.995f * -90.0f, 0.995f * 90.0f);
+		ImGui::SliderAngle("Расканье", &sim->initialState.orientation.z, -180.0f, 180.0f);
+
+		ImGui::NewLine();
+
+		ImGui::Text("Линейные усилия:");
+		ImGui::SliderFloat("tau-x", &sim->tau.linear.x, 0.0f, 100.0f);
+		ImGui::SliderFloat("tau-y", &sim->tau.linear.y, 0.0f, 100.0f);
+		ImGui::SliderFloat("tau-z", &sim->tau.linear.z, 0.0f, 100.0f);
+		ImGui::Text("Угловые усилия:");
+		ImGui::SliderFloat("tau-ax", &sim->tau.linear.x, 0.0f, 100.0f);
+		ImGui::SliderFloat("tau-ay", &sim->tau.linear.y, 0.0f, 100.0f);
+		ImGui::SliderFloat("tau-az", &sim->tau.linear.z, 0.0f, 100.0f);
+
+		ImGui::NewLine();
+		
+		if (ImGui::Button("Старт", ImVec2(100, 20)))
+		{
+			sim->Start();
+		}
+
+		ImGui::SameLine();
+
+		if (ImGui::Button("Стоп", ImVec2(100, 20)))
+		{
+			sim->Stop();
+		}
+
+		ImGui::NewLine();
+
+		if (ImGui::Button("Сохранить", ImVec2(100, 20)))
+		{
+			EngineFunctions::SetNewValue<float>("time span", "min",  sim->timeArgs.min,  "model\\init.json", &applog);
+			EngineFunctions::SetNewValue<float>("time span", "max",  sim->timeArgs.max,  "model\\init.json", &applog);
+			EngineFunctions::SetNewValue<float>("time span", "step", sim->timeArgs.step, "model\\init.json", &applog);
+
+			EngineFunctions::UpdateStatePattern("model state",    sim->initialState.position, sim->initialState.orientation,   "model\\init.json", &applog);
+			EngineFunctions::UpdateStatePattern("model velocity", sim->initialState.velocity, sim->initialState.axis_velocity, "model\\init.json", &applog);
+			EngineFunctions::UpdateStatePattern("tau",			  sim->tau.linear,			  sim->tau.angle,				   "model\\init.json", &applog);
+		}
 	}
 
 	ImGui::End();

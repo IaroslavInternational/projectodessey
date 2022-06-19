@@ -13,7 +13,7 @@ Trigger::Trigger(std::string	   name,
 	:
 	VisibleObject(name, position, orientation, visibility),
 	size(size),
-	platform(gfx, size, position, orientation)
+	platform(gfx, size, position, orientation, {0.0f, 0.0f, 0.0f, 1.0f})
 {
 	full_position.UpdatePoints(position, size);
 }

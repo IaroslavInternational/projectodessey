@@ -63,6 +63,17 @@ namespace EngineFunctions
 		ostr.close();
 	}
 
+	// Сохранить состояние объекта
+	inline void static UpdateStatePattern(std::string objectName, DirectX::XMFLOAT3 position, DirectX::XMFLOAT3 orientation, std::string path, AppLog* applog)
+	{
+		SetNewValue<float>(objectName, "x", position.x, path, applog);
+		SetNewValue<float>(objectName, "y", position.y, path, applog);
+		SetNewValue<float>(objectName, "z", position.z, path, applog);
+		SetNewValue<float>(objectName, "roll",  orientation.x, path, applog);
+		SetNewValue<float>(objectName, "pitch", orientation.y, path, applog);
+		SetNewValue<float>(objectName, "yaw",   orientation.z, path, applog);
+	}
+
 	// Заменить подстроку в строке
 	inline std::string static StrReplace(const std::string& inputStr, const std::string& src, const std::string& dst)
 	{

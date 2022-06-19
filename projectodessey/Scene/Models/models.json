@@ -3,13 +3,13 @@
     {
       "name": "polygon.obj",
       "path": "Scene/Models/Poly/Polygon.obj",
+      "pitch": 0.0,
+      "pos-x": 0.0,
+      "pos-y": 0.0,
+      "pos-z": 45.0,
+      "roll": 0.0,
       "scale": 40,
-      "pos-x": 0,
-      "pos-y": 0,
-      "pos-z": 45,
-      "roll": 0,
-      "pitch": 0,
-      "yaw": 0
+      "yaw": 0.0
     }
   ]
 }
