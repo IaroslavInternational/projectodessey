@@ -18,7 +18,7 @@ Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 	robot("SevROV", "Scene\\Models\\Robot\\robot.obj", wnd->Gfx(), wnd,
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }),
 		DirectX::XMFLOAT3({ 0.0f, 0.0f, 0.0f }), 0.01f),
-	sim("Data\\position.txt", "Data\\orientation.txt", "Data\\time.txt", robot, wnd->Gfx()),
+	sim("model\\position.txt", "model\\orientation.txt", "model\\time.txt", robot, wnd->Gfx(), rg),
 	demo(wnd->Gfx(), { 12.0f, 5.0f }, { 28.0f, 0.0f, 30.0f }, { 0.0f, 0.0f, 0.0f }, DirectX::XMFLOAT4{0.12f, 0.56f, 1.0f, 1.0f})
 {	
 	for (size_t i = 0; i < GRID_HEIGHT; i++)
@@ -41,7 +41,7 @@ Scene::Scene(std::shared_ptr<Window> wnd, std::string data)
 	demo.LinkTechniques(rg);
 	objects.cameras.AddCamera(robot.GetCamera());
 	robot.AttachGfx(rg);
-	sim.LinkTechniques(rg);
+	sim.LinkTechniques();
 	objects.LinkTechniques(rg);
 }
 

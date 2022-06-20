@@ -42,9 +42,6 @@ void GUISystem::Show()
 		ShowLeftBottomPanel();
 		ShowBottomPanel();
 		ShowOptionalPanel();
-
-		ShowRobotControl();
-		ShowSimulationParams();
 	}
 }
 
@@ -98,6 +95,11 @@ void GUISystem::ShowMenu()
 
 		if (ImGui::BeginMenu("ќкна"))
 		{
+			if (ImGui::MenuItem("ѕараметры симул€ции"))
+			{
+				ShowSimSettings ? ShowSimSettings = false : ShowSimSettings = true;
+			}
+
 			if (ImGui::MenuItem("ќсвещение"))
 			{
 				ShowPLightSettings ? ShowPLightSettings = false : ShowPLightSettings = true;
@@ -298,6 +300,16 @@ void GUISystem::ShowOptionalPanel()
 	if (ShowPLightSettings)
 	{
 		ShowPLightControl();
+	}
+	
+	if (ShowRobotSettings)
+	{
+		ShowRobotControl();
+	}
+
+	if (ShowSimSettings)
+	{
+		ShowSimulationParams();
 	}
 }
 
@@ -741,7 +753,7 @@ void GUISystem::ShowPLightControl()
 
 void GUISystem::ShowRobotControl()
 {
-	if (ImGui::Begin("“Ќѕј", &ShowRobotSettings, ImGuiWindowFlags_AlwaysAutoResize))
+	if (ImGui::Begin("“Ќѕј", NULL, ImGuiWindowFlags_AlwaysAutoResize))
 	{
 		bool rotDirty = false;
 		bool posDirty = false;
@@ -779,7 +791,7 @@ void GUISystem::ShowRobotControl()
 
 void GUISystem::ShowSimulationParams()
 {
-	if (ImGui::Begin("ѕараметры симул€ции", &ShowSimSettings, ImGuiWindowFlags_AlwaysAutoResize))
+	if (ImGui::Begin("ѕараметры симул€ции", NULL, ImGuiWindowFlags_AlwaysAutoResize))
 	{
 		std::ostringstream oss;
 		oss << "¬рем€ симул€ции: " << sim->time_counter;
@@ -814,9 +826,9 @@ void GUISystem::ShowSimulationParams()
 		ImGui::SliderFloat("tau-y", &sim->tau.linear.y, 0.0f, 100.0f);
 		ImGui::SliderFloat("tau-z", &sim->tau.linear.z, 0.0f, 100.0f);
 		ImGui::Text("”гловые усили€:");
-		ImGui::SliderFloat("tau-ax", &sim->tau.linear.x, 0.0f, 100.0f);
-		ImGui::SliderFloat("tau-ay", &sim->tau.linear.y, 0.0f, 100.0f);
-		ImGui::SliderFloat("tau-az", &sim->tau.linear.z, 0.0f, 100.0f);
+		ImGui::SliderFloat("tau-ax", &sim->tau.angle.x, 0.0f, 100.0f);
+		ImGui::SliderFloat("tau-ay", &sim->tau.angle.y, 0.0f, 100.0f);
+		ImGui::SliderFloat("tau-az", &sim->tau.angle.z, 0.0f, 100.0f);
 
 		ImGui::NewLine();
 		
@@ -844,6 +856,21 @@ void GUISystem::ShowSimulationParams()
 			EngineFunctions::UpdateStatePattern("model velocity", sim->initialState.velocity, sim->initialState.axis_velocity, "model\\init.json", &applog);
 			EngineFunctions::UpdateStatePattern("tau",			  sim->tau.linear,			  sim->tau.angle,				   "model\\init.json", &applog);
 		}
+
+		ImGui::SameLine();
+
+		if (ImGui::Button("ќбновить", ImVec2(100, 20)))
+		{
+			sim->Refresh();
+		}
+
+		ImGui::NewLine();
+
+		if (ImGui::Button("ќбновить траекторию", ImVec2(100, 20)))
+		{
+			sim->Reload();
+		}
+
 	}
 
 	ImGui::End();

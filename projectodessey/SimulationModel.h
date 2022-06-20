@@ -10,20 +10,29 @@ class SimulationModel
 public:
 	friend class GUISystem;
 public:
-	SimulationModel(const std::string& file_pos, const std::string& file_orient, const std::string& file_t, Robot& r, Graphics& gfx);
+	SimulationModel(const std::string& file_pos, const std::string& file_orient, const std::string& file_t, Robot& r, Graphics& gfx, Rgph::RenderGraph& rg);
 public:
-	void LinkTechniques(Rgph::RenderGraph& rg);
+	void LinkTechniques();
 	void Draw(size_t channels);
 public:
 	void Start() noexcept;
 	void Stop() noexcept;
 	void Refresh();
+	void Reload();
 	void Simulate(float dt);
 private:
+	void Init();
+private:
 	std::vector<std::unique_ptr<SolidSphere>> points;
-	DataParser data;
+	std::unique_ptr<DataParser> data;
 	Robot&     robot;
 private:
+	const std::string file_pos;
+	const std::string file_orient;
+	const std::string file_t;
+private:
+	Graphics& gfx;
+	Rgph::RenderGraph& rg;
 	bool   OnSim = false;
 	size_t iteration = 0;
 	float  time_counter = 0.0f;
@@ -31,9 +40,9 @@ private:
 private:
 	struct
 	{
-		float  max = 50.0f;
-		float  min = 0.0f;
-		float  step = 0.01f;
+		float  max;
+		float  min;
+		float  step;
 	} timeArgs;
 	struct
 	{
@@ -44,7 +53,7 @@ private:
 	} initialState;
 	struct
 	{
-		DirectX::XMFLOAT3 linear;
-		DirectX::XMFLOAT3 angle;
+		DirectX::XMFLOAT3 linear = { 0.0f, 0.0f, 0.0f };
+		DirectX::XMFLOAT3 angle = { 0.0f, 0.0f, 0.0f };;
 	} tau;
 };
