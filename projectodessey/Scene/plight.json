@@ -1,17 +1,17 @@
 {
   "Sun": [
     {
-      "pos-x": 19,
-      "pos-y": 33,
-      "pos-z": 44,
-      "ambient-r": 0.447,
-      "ambient-g": 0.447,
-      "ambient-b": 0.447,
-      "diffuse-r": 1.0,
-      "diffuse-g": 1.0,
+      "pos-x": 0,
+      "pos-y": 0,
+      "pos-z": 0,
+      "ambient-r": 0.0,
+      "ambient-g": 0.0,
+      "ambient-b": 0.0,
+      "diffuse-r": 0.2,
+      "diffuse-g": 0.38,
       "diffuse-b": 1.0,
       "diffuse-intensity": 1.5,
-      "att-const": 0.43,
+      "att-const": 1.2,
       "att-lin": 0.0001,
       "att-quad": 0.00192309
     }

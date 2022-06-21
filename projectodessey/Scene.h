@@ -6,7 +6,6 @@
 #include "SceneObjects.h"
 #include "Robot.h"
 #include "SimulationModel.h"
-#include "TestCube.h"
 
 class Scene
 {
@@ -30,4 +29,5 @@ private:
 	SimulationModel				 sim;
 	std::vector<std::unique_ptr<Plate>> grid;
 	Plate demo;
+	std::unique_ptr<Model> axis;
 };

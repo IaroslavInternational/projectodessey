@@ -163,7 +163,7 @@ void TestCube::SpawnControlWindow( Graphics& gfx,const char* name ) noexcept
 					return tagScratch.c_str();
 				};
 
-				if( auto v = buf["scale"]; v.Exists() )
+				if( auto v = buf["scale"]  )
 				{
 					dcheck( ImGui::SliderFloat( tag( "Scale" ),&v,1.0f,2.0f,"%.3f",3.5f ) );
 				}

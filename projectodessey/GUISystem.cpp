@@ -29,6 +29,12 @@ GUISystem::GUISystem(Scene* scene)
 			gpu_desc.emplace(std::wstring(d.desc.Description), round(static_cast<double>(d.desc.DedicatedVideoMemory) / 1073741824));
 		}
 	}
+
+	pLight->cbData.pos.x = rb->GetPosition().x;
+	pLight->cbData.pos.y = rb->GetPosition().y - 2.3f;
+	pLight->cbData.pos.z = rb->GetPosition().z + 3.0f;
+
+	pLight->pCamera->SetPosition(pLight->cbData.pos);
 }
 
 void GUISystem::Show()
@@ -784,6 +790,21 @@ void GUISystem::ShowRobotControl()
 				rb->model->position.z
 			)
 		);
+
+		rb->axis->SetRootTransform
+		(
+			DirectX::XMMatrixTranslation(
+				rb->axis->position.x,
+				rb->axis->position.y,
+				rb->axis->position.z
+			)
+		);
+
+		pLight->cbData.pos.x = rb->GetPosition().x;
+		pLight->cbData.pos.y = rb->GetPosition().y - 2.3f;
+		pLight->cbData.pos.z = rb->GetPosition().z + 3.0f;
+
+		pLight->pCamera->SetPosition(pLight->cbData.pos);
 	}
 
 	ImGui::End();
@@ -866,7 +887,7 @@ void GUISystem::ShowSimulationParams()
 
 		ImGui::NewLine();
 
-		if (ImGui::Button("Обновить траекторию", ImVec2(100, 20)))
+		if (ImGui::Button("Обновить траекторию", ImVec2(210, 20)))
 		{
 			sim->Reload();
 		}

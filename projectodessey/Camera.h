@@ -95,7 +95,7 @@ private:
 	Projection proj;
 
 	// Видимость индикатора камеры
-	bool enableCameraIndicator = true;		
+	bool enableCameraIndicator = false;		
 
 	// Видимость проекции камеры
 	bool enableFrustumIndicator = false;					

@@ -45,5 +45,5 @@ private:
 	mutable Bind::PixelConstantBuffer<PointLightCBuf> cbuf;				// Буфер шейдера
 	mutable std::shared_ptr<Camera> pCamera;							// Указатель на камеру
 private:
-	bool IsRendered = true;												// Разрешена ли отрисовка
+	bool IsRendered = false;												// Разрешена ли отрисовка
 };

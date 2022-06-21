@@ -27,8 +27,10 @@ public:
 	bool			  IsCollide(Plate& plate);
 private:
 	std::unique_ptr<Model>  model;
+	std::unique_ptr<Model>  axis;
 	std::shared_ptr<Camera> camera;
 	std::shared_ptr<Window> wnd;
 	HitBox hb;
+	DirectX::XMFLOAT3 cam_offset = { 0.0f, -8.5f, 15.0f };
 };
 

@@ -139,7 +139,6 @@ void Scene::Render(float dt)
 	robot.Render(Chan::shadow);
 
 	rg.Execute(wnd->Gfx());
-	//rg.RenderWindows(wnd->Gfx());
 
 	if (savingDepth)
 	{

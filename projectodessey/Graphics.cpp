@@ -166,7 +166,6 @@ DirectX::XMMATRIX Graphics::GetCamera() const noexcept
 	return camera;
 }
 
-#if IS_ENGINE_MODE
 void Graphics::EnableImgui() noexcept
 {
 	imguiEnabled = true;
@@ -181,7 +180,6 @@ bool Graphics::IsImguiEnabled() const noexcept
 {
 	return imguiEnabled;
 }
-#endif // IS_ENGINE_MODE
 
 UINT Graphics::GetWidth() const noexcept
 {
