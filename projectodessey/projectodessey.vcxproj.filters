@@ -55,17 +55,11 @@
     <Filter Include="Заголовочные файлы\Сцена\Объекты\Модель">
       <UniqueIdentifier>{a0d8c3fa-c77f-488a-85ce-4a517188e6f2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Заголовочные файлы\Сцена\Объекты\Триггер">
-      <UniqueIdentifier>{49b2dd38-ff00-4312-88bb-f7993458fa61}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Заголовочные файлы\Сцена\Объекты\Камера">
       <UniqueIdentifier>{36a59b20-b191-4795-8fcc-95b5c39a47dd}</UniqueIdentifier>
     </Filter>
     <Filter Include="Исходные файлы\Сцена\Объекты">
       <UniqueIdentifier>{456baabb-333b-4626-8948-b254effc5252}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Сцена\Объекты\Триггер">
-      <UniqueIdentifier>{5e501cf2-2400-4e86-84c4-1ba7a8aa712f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Исходные файлы\Сцена\Объекты\Модель">
       <UniqueIdentifier>{562fafbf-5d77-4aff-980b-56008d9d1542}</UniqueIdentifier>
@@ -336,9 +330,6 @@
     <ClCompile Include="imgui\ImGuiFileDialog.cpp">
       <Filter>imgui\dialog</Filter>
     </ClCompile>
-    <ClCompile Include="Trigger.cpp">
-      <Filter>Исходные файлы\Сцена\Объекты\Триггер</Filter>
-    </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Исходные файлы\Сцена\Объекты\Камера</Filter>
     </ClCompile>
@@ -462,9 +453,6 @@
     <ClCompile Include="VisibleObject.cpp">
       <Filter>Исходные файлы\Сцена\Объекты\База объектов</Filter>
     </ClCompile>
-    <ClCompile Include="TriggerContainer.cpp">
-      <Filter>Исходные файлы\Сцена\Объекты\Триггер</Filter>
-    </ClCompile>
     <ClCompile Include="GUISystem.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -478,6 +466,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="HitBox.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="PlateContainer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -752,12 +743,6 @@
     <ClInclude Include="EngineConverter.h">
       <Filter>Заголовочные файлы\Система\Макросы</Filter>
     </ClInclude>
-    <ClInclude Include="Trigger.h">
-      <Filter>Заголовочные файлы\Сцена\Объекты\Триггер</Filter>
-    </ClInclude>
-    <ClInclude Include="TriggerStruct.h">
-      <Filter>Заголовочные файлы\Сцена\Объекты\Триггер</Filter>
-    </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Заголовочные файлы\Сцена\Объекты\Камера</Filter>
     </ClInclude>
@@ -875,9 +860,6 @@
     <ClInclude Include="VisibleObject.h">
       <Filter>Заголовочные файлы\Сцена\Объекты\База объектов</Filter>
     </ClInclude>
-    <ClInclude Include="TriggerContainer.h">
-      <Filter>Заголовочные файлы\Сцена\Объекты\Триггер</Filter>
-    </ClInclude>
     <ClInclude Include="GUISystem.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
@@ -894,6 +876,9 @@
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
     <ClInclude Include="HitBox.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="PlateContainer.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

@@ -14,7 +14,7 @@ GUISystem::GUISystem(Scene* scene)
 	pLight(&scene->objects.pLight),
 	models(&scene->objects.models),
 	cameras(&scene->objects.cameras),
-	triggers(&scene->objects.triggers),
+	plates(&scene->objects.plates),
 	rb(&scene->robot),
 	sim(&scene->sim)
 {
@@ -321,6 +321,16 @@ void GUISystem::ShowOptionalPanel()
 
 void GUISystem::ShowLog()
 {
+	if (sim->CollisionDetected && !Inspected)
+	{
+		std::ostringstream oss;
+		oss << "Обнаружена коллизия по координатам [" << rb->GetPosition().x
+			<< "," << rb->GetPosition().y << "," << rb->GetPosition().z << "]";
+		applog.AddLog(oss.str().c_str());
+
+		Inspected = true;
+	}
+
 	ImGui::Begin("Лог", NULL, ImGuiWindowFlags_NoMove |
 		ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize |
 		ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoCollapse |
@@ -415,7 +425,7 @@ void GUISystem::ShowTriggersList()
 		ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoCollapse |
 		ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoBringToFrontOnFocus))
 	{
-		for (auto& t : triggers->triggers)
+		for (auto& t : plates->plates)
 		{
 			char label[128];
 			sprintf_s(label, t->name.c_str(), tSelected.c_str());
@@ -569,7 +579,7 @@ void GUISystem::ShowTriggersControl()
 		ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoCollapse |
 		ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoBringToFrontOnFocus))
 	{
-		for (auto& t : triggers->triggers)
+		for (auto& t : plates->plates)
 		{
 			if (t->name == tSelected)
 			{
@@ -586,21 +596,11 @@ void GUISystem::ShowTriggersControl()
 				dcheck(ImGui::SliderFloat("Z", &t->position.z, -80.0f, 80.0f, "%.2f"), posDirty);
 
 				ImGui::Text("Ориентация");
-				dcheck(ImGui::SliderAngle("Roll", &t->orientation.x,  -180.0f, 180.0f, "%.2f"), rotDirty);
-				dcheck(ImGui::SliderAngle("Pitch", &t->orientation.y, -180.0f, 180.0f, "%.2f"), rotDirty);
-				dcheck(ImGui::SliderAngle("Yaw", &t->orientation.z,   -180.0f, 180.0f, "%.2f"), rotDirty);
+				dcheck(ImGui::SliderAngle("Крен", &t->orientation.x,  -180.0f, 180.0f, "%.2f"), rotDirty);
+				dcheck(ImGui::SliderAngle("Тангаж", &t->orientation.y, -180.0f, 180.0f, "%.2f"), rotDirty);
+				dcheck(ImGui::SliderAngle("Рысканье", &t->orientation.z,   -180.0f, 180.0f, "%.2f"), rotDirty);
 
-				ImGui::Text("Глубина:");
-				dcheck(ImGui::SliderFloat("", &t->deep, 1.0f, 5.0f, "%.2f"), dDirty);
-
-				t->platform.SetPosition(t->position);
-				t->platform.SetRotation(t->orientation);
-				
-				ImGui::NewLine();
-
-				ImGui::Separator();
-				ImGui::Text("Триггер указывает на: %s", "GOAL HERE");
-
+				ImGui::Checkbox("Показать", &t->IsShow);
 				break;
 			}
 		}
@@ -862,7 +862,7 @@ void GUISystem::ShowSimulationParams()
 
 		if (ImGui::Button("Стоп", ImVec2(100, 20)))
 		{
-			sim->Stop();
+			sim->Stop(SimFlag::Default);
 		}
 
 		ImGui::NewLine();

@@ -16,10 +16,7 @@ public:
 public:
 	void						 ProcessInput(float dt); // Обработка входных данных
 	void						 Render(float dt);       // Отрисовка сцены
-	std::pair<std::string, bool> IsOnTheSceneTrigger();	 //
-	void						 ResetPos();			 // Возращение камеры на исходное положение
 private:
-	bool savingDepth = false;
 	bool cursorState = false;
 private:
 	std::shared_ptr<Window>		 wnd;				// Указатель на главное окно 
@@ -27,7 +24,5 @@ private:
 	SceneObjects				 objects;
 	Robot						 robot;
 	SimulationModel				 sim;
-	std::vector<std::unique_ptr<Plate>> grid;
-	Plate demo;
-	std::unique_ptr<Model> axis;
+	std::unique_ptr<Model>	     axis;	
 };

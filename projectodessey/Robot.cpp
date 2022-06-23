@@ -56,6 +56,11 @@ DirectX::XMFLOAT3 Robot::GetOrientation()
 	return model->GetOrientation();
 }
 
+HitBox& Robot::GetHitBox()
+{
+	return hb;
+}
+
 bool Robot::IsCollide(Plate& plate)
 {
 	return hb.IsCollide(plate);

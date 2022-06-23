@@ -53,7 +53,7 @@ private:
 	PointLight*       pLight;
 	ModelContainer*   models;
 	CameraContainer*  cameras;
-	TriggerContainer* triggers;
+	PlateContainer*   plates;
 	Robot*			  rb;
 	SimulationModel*  sim;
 private:
@@ -80,4 +80,6 @@ private:
 	std::string tSelected = "";
 
 	/*****************************************************/
+
+	bool Inspected = false;
 };

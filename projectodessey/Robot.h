@@ -24,6 +24,7 @@ public:
 	void			  SetOrientation(DirectX::XMFLOAT3 orientation);
 	DirectX::XMFLOAT3 GetPosition();
 	DirectX::XMFLOAT3 GetOrientation();
+	HitBox&			  GetHitBox();
 	bool			  IsCollide(Plate& plate);
 private:
 	std::unique_ptr<Model>  model;

@@ -5,6 +5,12 @@
 #include <vector>
 #include "SolidSphere.h"
 
+enum class SimFlag
+{
+	Default,
+	Collision
+};
+
 class SimulationModel
 {
 public:
@@ -16,7 +22,7 @@ public:
 	void Draw(size_t channels);
 public:
 	void Start() noexcept;
-	void Stop() noexcept;
+	void Stop(SimFlag flag) noexcept;
 	void Refresh();
 	void Reload();
 	void Simulate(float dt);
@@ -37,6 +43,7 @@ private:
 	size_t iteration = 0;
 	float  time_counter = 0.0f;
 	float  speed = 1.0f;
+	bool CollisionDetected = false;
 private:
 	struct
 	{

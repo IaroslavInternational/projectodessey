@@ -8,9 +8,9 @@ global tau
 
 initData = jsondecode(fileread('init.json'));
 
-eta  = [initData.modelState.x;    initData.modelState.y;     initData.modelState.z; 
+eta  = [initData.modelState.x;    initData.modelState.z;     initData.modelState.y; 
         initData.modelState.roll; initData.modelState.pitch; initData.modelState.yaw];
-v0   = [initData.modelVelocity.x;    initData.modelVelocity.y;     initData.modelVelocity.z; 
+v0   = [initData.modelVelocity.x;    initData.modelVelocity.z;     initData.modelVelocity.y; 
         initData.modelVelocity.roll; initData.modelVelocity.pitch; initData.modelVelocity.yaw];
 tmax = initData.timeSpan.max;
 tmin = initData.timeSpan.min;

@@ -122,12 +122,12 @@
     <ClCompile Include="imgui\imnodes.cpp" />
     <ClCompile Include="ModelContainer.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="PlateContainer.cpp" />
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneDataReader.cpp" />
     <ClCompile Include="SceneObjects.cpp" />
     <ClCompile Include="SimulationModel.cpp" />
-    <ClCompile Include="TriggerContainer.cpp" />
     <ClCompile Include="ShadowCameraCBuf.cpp" />
     <ClCompile Include="CameraContainer.cpp" />
     <ClCompile Include="CameraIndicator.cpp" />
@@ -284,7 +284,6 @@
     <ClCompile Include="Topology.cpp" />
     <ClCompile Include="TransformCbuf.cpp" />
     <ClCompile Include="TransformCbufScaling.cpp" />
-    <ClCompile Include="Trigger.cpp" />
     <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="VertexShader.cpp" />
@@ -356,12 +355,12 @@
     <ClInclude Include="LogCommands.h" />
     <ClInclude Include="ModelContainer.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="PlateContainer.h" />
     <ClInclude Include="Robot.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneDataReader.h" />
     <ClInclude Include="SceneObjects.h" />
     <ClInclude Include="SimulationModel.h" />
-    <ClInclude Include="TriggerContainer.h" />
     <ClInclude Include="ShadowCameraCBuf.h" />
     <ClInclude Include="CameraContainer.h" />
     <ClInclude Include="CameraIndicator.h" />
@@ -447,8 +446,6 @@
     <ClInclude Include="Topology.h" />
     <ClInclude Include="TransformCbuf.h" />
     <ClInclude Include="TransformCbufScaling.h" />
-    <ClInclude Include="Trigger.h" />
-    <ClInclude Include="TriggerStruct.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="VertexShader.h" />

@@ -1,13 +1,12 @@
 #pragma once
 
 #include "ModelContainer.h"
-#include "TriggerContainer.h"
 #include "CameraContainer.h"
 #include "PointLight.h"
-
+#include "PlateContainer.h"
 #include "AppLog.h"
-
 #include "SceneDataReader.h"
+#include "BlurOutlineRenderGraph.h"
 
 class SceneObjects
 {
@@ -22,9 +21,9 @@ public:
 	/***** -Объекты- *****/
 	
 	CameraContainer cameras; // Контейнер камер
-	PointLight pLight; // Истоники света
-	ModelContainer models; // Модели сцены
-	TriggerContainer triggers; // Триггеры сцены
-	
+	PointLight	    pLight;  // Истоники света
+	ModelContainer  models;  // Модели сцены
+	PlateContainer  plates;
+
 	/*********************/
 };

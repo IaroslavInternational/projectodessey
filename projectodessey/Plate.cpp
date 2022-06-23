@@ -6,12 +6,14 @@
 #include "Channels.h"
 #include "ConstantBuffersEx.h"
 
-Plate::Plate(Graphics&		   gfx,
+Plate::Plate(const std::string& name,
+			 Graphics&		   gfx,
 			 DirectX::XMFLOAT2 size,
 			 DirectX::XMFLOAT3 position,
 			 DirectX::XMFLOAT3 orientation,
 			 DirectX::XMFLOAT4 color)
 	:
+	name(name),
 	size(size),
 	position(position),
 	orientation(orientation),
@@ -49,7 +51,7 @@ DirectX::BoundingBox& Plate::CreateBBox()
 {
 	DirectX::BoundingBox box;
 	box.Center = position;
-	box.Extents = { size.x / 2, size.y / 2, 2.5 / 2 };
+	box.Extents = { size.x / 2, size.y / 2, 0.0f };
 
 	return box;
 }

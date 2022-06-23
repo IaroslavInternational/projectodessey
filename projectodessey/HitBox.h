@@ -8,7 +8,7 @@ class HitBox
 public:
 	friend class GUISystem;
 public:
-	HitBox(DirectX::XMFLOAT3 center, float radius = 2.0f);
+	HitBox(DirectX::XMFLOAT3 center, float radius = 1.8f);
 public:
 	bool IsCollide(const DirectX::BoundingBox& box);
 	bool IsCollide(Plate& box);

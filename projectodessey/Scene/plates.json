@@ -1,0 +1,15 @@
+{
+  "plate 1": [
+    {
+      "name": "plate 1",
+      "width": 22,
+      "height": 22,
+      "pos-x": 44.63,
+      "pos-y": -16.3,
+      "pos-z": -31.0,
+      "roll": 0.1,
+      "pitch": 0.25,
+      "yaw": 0.18
+    }
+  ]
+}

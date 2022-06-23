@@ -15,7 +15,8 @@ public:
 	// gfx - адрес графического ядра
 	// position - позиция платформы
 	// orientation - ориентация платформы
-	Plate(Graphics&		    gfx, 
+	Plate(const std::string& name,
+		  Graphics&		    gfx, 
 		  DirectX::XMFLOAT2 size, 
 		  DirectX::XMFLOAT3 position =	  { 0.0f, 0.0f, 0.0f },
 		  DirectX::XMFLOAT3 orientation = { 0.0f, 0.0f, 0.0f},
@@ -46,6 +47,8 @@ public:
 	// size.y - высота
 	DirectX::XMFLOAT2* GetSizePtr() noexcept;
 
+	bool IsDrawn() { return IsShow; };
+
 	// Получить матрицу трансформации платформы
 	DirectX::XMMATRIX GetTransformXM() const noexcept override;
 private:
@@ -69,4 +72,8 @@ private:
 	DirectX::XMFLOAT3 orientation;
 
 	IndexedTriangleList model;
+
+	std::string name;
+
+	bool IsShow = true;
 };

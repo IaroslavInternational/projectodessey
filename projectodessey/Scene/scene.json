@@ -2,7 +2,7 @@
   "Scene": [
     {
       "modelsPath":   "Scene\\Models\\models.json",
-      "triggersPath": "Scene\\triggers.json",
+      "triggersPath": "Scene\\plates.json",
       "pLightsPath":  "Scene\\plight.json",
       "camerasPath":  "Scene\\cameras.json"
     }

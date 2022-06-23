@@ -31,11 +31,17 @@ void SimulationModel::Draw(size_t channels)
 
 void SimulationModel::Start() noexcept
 {
+	CollisionDetected = false;
 	OnSim = true;
 }
 
-void SimulationModel::Stop() noexcept
+void SimulationModel::Stop(SimFlag flag) noexcept
 {
+	if (flag == SimFlag::Collision)
+	{
+		CollisionDetected = true;
+	}
+
 	OnSim = false;
 }
 
